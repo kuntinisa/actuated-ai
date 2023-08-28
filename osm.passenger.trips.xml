@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-02-16 14:23:11.495699 by osmWebWizard.py UNKNOWN
+<configuration>
+    <allow-fringe.min-length value="1000.0"/>
+    <end value="3600"/>
+    <fringe-factor value="5"/>
+    <fringe-start-attributes value="departSpeed=&quot;max&quot;"/>
+    <insertion-density value="12.0"/>
+    <lanes value="True"/>
+    <min-distance.fringe value="10.0"/>
+    <min-distance value="300.0"/>
+    <net-file value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.net.xml.gz"/>
+    <remove-loops value="True"/>
+    <route-file value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.passenger.rou.xml"/>
+    <trip-attributes value="departLane=&quot;best&quot;"/>
+    <output-trip-file value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.passenger.trips.xml"/>
+    <prefix value="veh"/>
+    <validate value="True"/>
+    <vehicle-class value="passenger"/>
+</configuration>
+-->
+
+<!-- generated on 2023-02-16 14:23:11 by Eclipse SUMO duarouter Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.net.xml.gz"/>
+        <route-files value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.passenger.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/opt/homebrew/Cellar/sumo/1.15.0/share/sumo/tools/2023-02-16-14-23-09/osm.passenger.trips.xml.tmp"/>
+        <alternatives-output value="NUL"/>
+        <write-trips value="true"/>
+    </output>
+
+    <processing>
+        <remove-loops value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- misal dari arah jalan besar timur itu ada 12 trips -->
+    <!-- kita ganti namanya sesuai yang diiginkan agar lebih gampang aja -->
+    <vType id="veh_passenger" vClass="passenger" >
+    </vType>    
+    <vType id="veh_emergency" vClass="emergency" speedFactor="1.5" guiShape="emergency">
+        <param key="has.bluelight.device" value="true"/>
+    </vType>
+
+    <!-- flow selama 3600 detik atau 1 jam -->
+    <flow id="type3" color="1,1,0"  begin="0" end= "3600" vehsPerHour="500" type="veh_passenger" from="jljendsudirman_satuarah_1" to="jlkyaimojo_selatan_2"/>    
+    <flow id="type4" color="1,1,0"  begin="0" end= "3600" vehsPerHour="500" type="veh_passenger" from="jlkyaimojo_utara_4" to="jlsuroto_timur_3"/>    
+    <flow id="type5" color="1,1,0"  begin="0" end= "3600" vehsPerHour="500" type="veh_passenger" from="jljendsudirman_satuarah_1" to="jlcikditiro_barat_2"/>    
+    <flow id="type6" color="1,1,0"  begin="0" end= "3600" vehsPerHour="500" type="veh_passenger" from="jlsuroto_barat_3" to="jlcikditiro_barat_2"/>    
+    <flow id="type7" color="1,1,0"  begin="0" end= "3600" vehsPerHour="500" type="veh_passenger" from="jljendsudirman_satuarah_1" to="jlsuroto_timur_3"/>    
+    <flow id="type8" color="1,1,0"  begin="0" end= "3600" vehsPerHour="250" type="veh_passenger" from="jlcikditiro_timur_1" to="jlkyaimojo_selatan_2"/>    
+    <flow id="type9" color="1,1,0"  begin="0" end= "3600" vehsPerHour="250" type="veh_passenger" from="jlcikditiro_timur_1" to="jlsuroto_timur_2"/>    
+
+    <!-- munculkan ev sebanyak 18 kendaraan per jam atau tiap 3 menit sedangkan siklus lampu merahnya 2 menit-->
+    <!-- ada 1 ev yang tidak terdeteksi, karna harusnya sesuai urutan id flow -->
+    <!-- ev dari arah timur -->
+    <flow id="evtimur" color="1,1,0"  begin="25" end= "3600" vehsPerHour="18" type="veh_emergency" from="jljendsudirman_satuarah_1" to="jlkyaimojo_selatan_2"/>    
+    <!-- ev dari arah utara -->
+    <flow id="evutara" color="1,1,0"  begin="0" end= "3600" vehsPerHour="18" type="veh_emergency" from="jlcikditiro_timur_1" to="jlsuroto_timur_2"/>    
+
+    <!-- <trip id="veh1" type="veh_emergency" depart="50" departLane="best" from="jljendsudirman_satuarah_1" to="jlkyaimojo_selatan_2"/> -->
+
+
+    <!-- <flow id="type4" color="1,1,0"  begin="0" end= "7200" vehsPerHour="3600" type="veh_passenger" from="jlkyaimojo$1" to="jlcikditiro#1">     -->
+    <!-- </flow> -->
+
+    <!-- <trip id="veh2" type="veh_emergency" depart="124" departLane="best" from="jljendsudirmansatuarah2" to="jlkyaimojo$1"/> --> 
+
+
+    <!-- <trip id="veh0" type="veh_passenger" depart="0.00" departLane="best" departSpeed="max" from="561138356#0" to="jljendsudirman#8"/> -->
+    <!-- <trip id="veh2" type="veh_passenger" depart="31.18" departLane="best" departSpeed="max" from="jlkyaimojo" to="357658481"/> -->
+    <!-- <trip id="veh1" type="veh_passenger" depart="0" departLane="best" from="jljendsudirman$1" to="jlpmangkubumi#1"/> -->
+    <!-- <trip id="veh2" type="veh_passenger" depart="10" departLane="best" from="jlpmangkubumi#3" to="jljendsudirman#1"/> -->
+    <!-- <trip id="veh3" type="veh_passenger" depart="46.77" departLane="best" from="jlpdiponegoro#5" to="jlpmangkubumi#3"/> -->
+    <!-- <trip id="veh5" type="veh_passenger" depart="77.94" departLane="best" from="jljendsudirman$7" to="1096212675#1"/> -->
+    <!-- <trip id="veh7" type="veh_passenger" depart="109.12" departLane="best" from="jlpdiponegoro#4" to="1123951620"/> -->
+    
+
+</routes>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queue-export>
+
+  <data timestep="<TIME_STEP>">
+
+  <lanes>
+
+    <lane id="<LANE_ID>" queueing_time="<LANE_QUEUEING_TIME>" queueing_length="<LANE_QUEUEING_LENGTH>"
+    queueing_length_experimental="<LANE_QUEUEING_LENGTH_EXPERIMENTAL>"/>
+
+    <!-- ... next lane ... -->
+
+  </lanes>
+  </data>
+
+  <!-- ... next timestep ... -->
+
+</queue-export>

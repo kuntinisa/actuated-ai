@@ -1,0 +1,301 @@
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 3
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 3
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 9 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 10 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 11 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 12 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 7 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 8 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase only ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 6 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 5 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 4 exit phase ke max waiting line: phase: 2
+episode ke 2 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 2 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 3 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 1 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 1 preemption ke 3 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 1
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 1
+episode ke 0 preemption ke 3 exit phase ke max waiting line: phase: 1
+episode ke 1 preemption ke 1 exit phase ke max waiting line: phase: 3
+episode ke 1 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 2 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 5 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 6 preemption ke 2 exit phase ke max waiting line: phase: 1
+episode ke 12 preemption ke 1 exit phase ke max waiting line: phase: 1
+episode ke 25 preemption ke 3 exit phase only ke max waiting line: phase: 1
+episode ke 26 preemption ke 1 exit phase only ke max waiting line: phase: 1
+episode ke 26 preemption ke 2 exit phase only ke max waiting line: phase: 1
+episode ke 26 preemption ke 3 exit phase only ke max waiting line: phase: 1
+episode ke 35 preemption ke 1 exit phase only ke max waiting line: phase: 0
+episode ke 46 preemption ke 3 exit phase only ke max waiting line: phase: 1
+episode ke 46 preemption ke 4 exit phase only ke max waiting line: phase: 3
+episode ke 50 preemption ke 1 exit phase only ke max waiting line: phase: 1
+episode ke 52 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 53 preemption ke 1 exit phase only ke max waiting line: phase: 3
+episode ke 65 preemption ke 1 exit phase only ke max waiting line: phase: 0
+episode ke 66 preemption ke 2 exit phase only ke max waiting line: phase: 0
+episode ke 69 preemption ke 2 exit phase only ke max waiting line: phase: 1
+episode ke 72 preemption ke 2 exit phase only ke max waiting line: phase: 2
+episode ke 81 preemption ke 2 exit phase only ke max waiting line: phase: 0
+episode ke 82 preemption ke 1 exit phase only ke max waiting line: phase: 0
+episode ke 83 preemption ke 2 exit phase only ke max waiting line: phase: 1
+episode ke 83 preemption ke 3 exit phase only ke max waiting line: phase: 2
+episode ke 85 preemption ke 2 exit phase only ke max waiting line: phase: 1
+episode ke 86 preemption ke 1 exit phase only ke max waiting line: phase: 2
+episode ke 87 preemption ke 2 exit phase only ke max waiting line: phase: 3
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 1
+episode ke 0 preemption ke 2 exit phase ke max waiting line: phase: 2
+episode ke 3 preemption ke 1 exit phase ke max waiting line: phase: 1
+episode ke 4 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 2
+episode ke 0 preemption ke 1 exit phase ke max waiting line: phase: 0
+episode ke 2 preemption ke 1 exit phase ke max waiting line: phase: 1
+episode ke 3 preemption ke 3 exit phase ke max waiting line: phase: 1
+episode ke 6 preemption ke 2 exit phase ke max waiting line: phase: 3
+action value[[0. 0. 0. 0.]]
+action value[[0. 0. 0. 0.]]
+action value[[0. 0. 0. 0.]]
+action value[[0. 0. 0. 0.]]
+action value[[-0.04146784  0.0252341  -0.12452927 -0.06844334]]
+action value[[-0.04146784  0.0252341  -0.12452927 -0.06844334]]
+action value[[-0.04146784  0.0252341  -0.12452927 -0.06844334]]
+action value[[ 0.00070601  0.14349964 -0.12149075 -0.05555299]]
+action value[[ 0.02361828  0.11103974 -0.2803142  -0.10333838]]
+action value[[ 0.02361828  0.11103974 -0.2803142  -0.10333838]]
+action value[[ 0.02361828  0.11103974 -0.2803142  -0.10333838]]
+action value[[ 0.02361828  0.11103974 -0.2803142  -0.10333838]]
+action value[[ 0.00045141  0.04740707 -0.37080345 -0.10629939]]
+action value[[ 0.00045141  0.04740707 -0.37080345 -0.10629939]]
+action value[[-0.00363071  0.02564898 -0.49222064 -0.19274321]]
+action value[[-0.00363071  0.02564898 -0.49222064 -0.19274321]]
+action value[[-0.0252819   0.15123461 -0.35570326 -0.21183114]]
+action value[[ 0.05176951  0.27005264 -0.37782916 -0.15327124]]
+action value[[ 0.05176951  0.27005264 -0.37782916 -0.15327124]]
+action value[[ 0.04653523  0.25999334 -0.5303345  -0.23461108]]
+action value[[ 0.04653523  0.25999334 -0.5303345  -0.23461108]]
+action value[[ 0.09340169  0.3822589  -0.53587484 -0.18496005]]
+action value[[ 0.09340169  0.3822589  -0.53587484 -0.18496005]]
+action value[[ 0.04122911  0.5862916  -0.5898858  -0.14403015]]
+action value[[ 0.04122911  0.5862916  -0.5898858  -0.14403015]]
+action value[[ 0.04122911  0.5862916  -0.5898858  -0.14403015]]
+action value[[ 0.19908962  1.4916621  -2.3242273  -0.6902727 ]]
+action value[[-0.27137595  1.0834932  -1.9516668  -1.1742983 ]]
+action value[[-0.5466575  1.074956  -2.1265328 -1.2403182]]
+action value[[-0.52567214  1.3680553  -2.4621234  -1.4481045 ]]
+action value[[-0.91257906  1.8164886  -2.4208875  -1.0305947 ]]
+action value[[-2.0733254   2.157846   -3.0266924  -0.55207205]]
+action value[[-2.0893533  2.6227105 -3.0354319 -0.5328112]]
+action value[[-1.5387818  3.248783  -3.1709166 -1.0878417]]
+action value[[-1.7509438  3.313319  -3.5450826 -1.2259417]]
+action value[[-3.245157   2.7096462 -4.6258855 -1.6085694]]
+action value[[-4.395114   2.4305272 -5.7189245 -1.6314952]]
+action value[[-5.466233   2.1265078 -6.588103  -1.5697211]]
+action value[[-4.956628   2.77657   -6.764009  -2.0004647]]
+action value[[-4.7490954  3.2484922 -6.949467  -2.3041093]]
+action value[[-5.8771462  3.362148  -7.798849  -2.282624 ]]
+action value[[-6.0643044  4.4145164 -7.2091594 -2.0048203]]
+action value[[-7.1314697  4.452767  -8.269732  -2.124733 ]]
+action value[[-7.8230095  4.2849545 -9.189754  -2.3221478]]
+action value[[ -8.9175205   3.8513417 -10.252693   -2.3357065]]
+action value[[-8.415039   4.5723176 -9.665552  -2.4427989]]
+action value[[ -8.232284    4.755372  -10.002995   -2.7705188]]
+action value[[ -8.519646    4.7309895 -11.186497   -3.2102568]]
+action value[[ -8.934495    4.853929  -11.642917   -3.3081279]]
+action value[[-10.125942    4.616515  -12.531255   -3.2305892]]
+action value[[ -9.531901    5.034769  -12.625608   -3.6083348]]
+action value[[-10.900692    4.6527348 -13.285486   -3.3088098]]
+action value[[-10.114919    5.4442782 -13.292821   -3.7937074]]
+action value[[-10.431934    5.7412634 -13.415138   -3.7830086]]
+action value[[-11.919849    5.442153  -14.186863   -3.4927921]]
+action value[[-12.407128    5.5944104 -14.3137045  -3.3444202]]
+action value[[-13.4423275   5.6254406 -15.113702   -3.2895024]]
+action value[[-14.230572    5.6687083 -15.38704    -3.047439 ]]
+action value[[-14.792252    6.1655464 -14.589846   -2.3758552]]
+action value[[-15.826109    6.2219276 -15.319908   -2.2321305]]
+action value[[-16.780405    6.406575  -15.702235   -2.0070248]]
+action value[[-16.571589    7.0574822 -15.570916   -2.1943486]]
+action value[[-18.259499    6.4163713 -16.997751   -1.9859455]]
+action value[[ -9.305344  16.340023 -11.706172   7.256915]]
+action value[[-11.905911   14.748577   -9.333321    7.9098134]]
+action value[[-8.438471  11.417108  -8.176239   4.3153296]]
+action value[[12.68399   -1.8973528 11.738505  -1.9917662]]
+action value[[25.319265 12.572553 20.757818 11.3009  ]]

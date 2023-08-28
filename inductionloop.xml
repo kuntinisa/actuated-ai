@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-02-22 14:50:04 by Eclipse SUMO netedit Version 1.15.0
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    
+    
+    <!-- detector in and out -->
+    <inductionLoop id="-E1_0" name="inductionloop" lane="-E1_0" pos="10" period="1.00" file="output_inductionloop1.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="-E1_1" name="inductionloop" lane="-E1_1" pos="10" period="1.00" file="output_inductionloop2.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="E3_0" name="inductionloop" lane="E3_0" pos="0" period="1.00" file="output_inductionloop4.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+    <inductionLoop id="E3_1" name="inductionloop" lane="E3_1" pos="0" period="1.00" file="output_inductionloop5.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+    
+    <!-- detector in and out -->
+    <inductionLoop id="-E2_0" name="inductionloop" lane="-E2_0" pos="10" period="1.00" file="output_inductionloop1.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="-E2_1" name="inductionloop" lane="-E2_1" pos="10" period="1.00" file="output_inductionloop2.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="E4_0" name="inductionloop" lane="E4_0" pos="0" period="1.00" file="output_inductionloop4.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+    <inductionLoop id="E4_1" name="inductionloop" lane="E4_1" pos="0" period="1.00" file="output_inductionloop5.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+
+    <!-- detector in and out -->
+    <inductionLoop id="-E3_0" name="inductionloop" lane="-E3_0" pos="10" period="1.00" file="output_inductionloop1.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="-E3_1" name="inductionloop" lane="-E3_1" pos="10" period="1.00" file="output_inductionloop2.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="E1_0" name="inductionloop" lane="E1_0" pos="0" period="1.00" file="output_inductionloop4.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+    <inductionLoop id="E1_1" name="inductionloop" lane="E1_1" pos="0" period="1.00" file="output_inductionloop5.xml" vTypes="ev_emergency" friendlyPos="1" length="30"/>
+
+    <!-- detector in and out -->
+    <inductionLoop id="-E4_0" name="inductionloop" lane="-E4_0" pos="10" period="1.00" file="output_inductionloop1.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="-E4_1" name="inductionloop" lane="-E4_1" pos="10" period="1.00" file="output_inductionloop2.xml" vTypes="ev_emergency" friendlyPos="1" length="50"/>
+    <inductionLoop id="E2_0" name="inductionloop" lane="E2_0" pos="0" period="1.00" file="output_inductionloop4.xml" vTypes="ev_emergency" friendlyPos="1" length="3"/>
+    <inductionLoop id="E2_1" name="inductionloop" lane="E2_1" pos="0" period="1.00" file="output_inductionloop5.xml" vTypes="ev_emergency" friendlyPos="1" length="3"/>
+    
+    <!-- Tugu
+    <inductionLoop id="in_tugu1" name="inductionloop" lane="jljendsudirman_selatan_2_1" pos="10" period="1.00" file="output_inductionloop6.xml" vTypes="veh_emergency" friendlyPos="1" length="80"/>
+    <inductionLoop id="in_tugu2" name="inductionloop" lane="jljendsudirman_selatan_2_0" pos="10" period="1.00" file="output_inductionloop7.xml" vTypes="veh_emergency" friendlyPos="1" length="80"/>
+
+    <inductionLoop id="out_tugu1" name="inductionloop" lane="jlpdiponegoro_selatan_1_0" pos="0" period="1.00" file="output_inductionloop8.xml" vTypes="veh_emergency" friendlyPos="1" length="30"/>
+    <inductionLoop id="out_tugu2" name="inductionloop" lane="jlpdiponegoro_selatan_1_1" pos="0" period="1.00" file="output_inductionloop9.xml" vTypes="veh_emergency" friendlyPos="1" length="30"/>
+
+     Pingit
+    <inductionLoop id="in_pingit1" name="inductionloop" lane="jlpdiponegoro_selatan_2_0" pos="10" period="1.00" file="output_inductionloop10.xml" vTypes="veh_emergency" friendlyPos="1" length="80"/>
+    <inductionLoop id="in_pingit2" name="inductionloop" lane="jlpdiponegoro_selatan_2_1" pos="10" period="1.00" file="output_inductionloop11.xml" vTypes="veh_emergency" friendlyPos="1" length="80"/>
+
+    <inductionLoop id="out_pingit1" name="inductionloop" lane="jlkyaimojo_selatan_1_0" pos="0" period="1.00" file="output_inductionloop12.xml" vTypes="veh_emergency" friendlyPos="1" length="30"/>
+    <inductionLoop id="out_pingit2" name="inductionloop" lane="jlkyaimojo_selatan_1_1" pos="0" period="1.00" file="output_inductionloop13.xml" vTypes="veh_emergency" friendlyPos="1" length="30"/> -->
+
+</additional>

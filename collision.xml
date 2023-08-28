@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-24 10:28:39 by Eclipse SUMO sumo Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="junction_route.net.xml"/>
+        <route-files value="osm.passenger.trips.xml"/>
+        <additional-files value="inductionloop.xml"/>
+    </input>
+
+    <output>
+        <emission-output value="emission.xml"/>
+        <emission-output.geo value="true"/>
+        <battery-output value="battery.xml"/>
+        <fcd-output value="car.xml"/>
+        <summary-output value="summary.xml"/>
+        <collision-output value="collision.xml"/>
+        <statistic-output value="stats.xml"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="18"/>
+        <device.rerouting.adaptation-interval value="10"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <gui_only>
+        <gui-settings-file value="osm.view.xml"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<collisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/collision_file.xsd">
+    <collision time="1810.00" type="junction" lane=":simpang_gramedia_0_1" pos="0.00" collider="evtimur.6" victim="type3.171" colliderType="veh_emergency" victimType="veh_passenger@type3.171" colliderSpeed="0.16" victimSpeed="7.29"/>
+    <collision time="3756.00" type="junction" lane=":1903473313_0_0" pos="0.00" collider="evtimur.14" victim="type3.326" colliderType="veh_emergency" victimType="veh_passenger" colliderSpeed="3.04" victimSpeed="0.09"/>
+    <collision time="4672.00" type="junction" lane=":1903473313_0_0" pos="0.00" collider="evtimur.16" victim="type3.401" colliderType="veh_emergency" victimType="veh_passenger" colliderSpeed="0.33" victimSpeed="0.00"/>
+    <collision time="5507.00" type="junction" lane=":1903473313_0_0" pos="0.00" collider="evtimur.17" victim="type3.452" colliderType="veh_emergency" victimType="veh_passenger" colliderSpeed="0.33" victimSpeed="0.25"/>
+</collisions>

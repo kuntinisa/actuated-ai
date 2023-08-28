@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-07-14 16:29:33.509346 by randomTrips.py UNKNOWN
+<configuration>
+    <begin value="0"/>
+    <end value="1800"/>
+    <fringe-factor value="10"/>
+    <net-file value="four-leg-intersection.net.xml"/>
+    <period value="900.0"/>
+    <random value="True"/>
+    <random-depart value="True"/>
+    <route-file value="evfour-leg-new-intersection.rou.xml"/>
+    <prefix value="ev"/>
+    <vclass value="emergency"/>
+    <vehicle-class value="emergency"/>
+</configuration>
+-->
+
+<!-- generated on 2023-07-14 16:29:33 by Eclipse SUMO duarouter Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="four-leg-intersection.net.xml"/>
+        <route-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="evfour-leg-new-intersection.rou.xml"/>
+        <alternatives-output value="NUL"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="1800"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="ev_emergency" vClass="emergency"/>
+    <vehicle id="ev1" type="ev_emergency" depart="1477.00">
+        <route edges="-E4 E1"/>
+    </vehicle>
+</routes>

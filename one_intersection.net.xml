@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-05-08 20:15:40 by Eclipse SUMO netedit Version 1.15.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="one_intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="one_intersection.net.xml"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="1"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" lefthand="true" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="-428629.16,860853.54" convBoundary="1626.10,78.31,3376.96,1242.05" origBoundary="110.352700,-7.787449,110.379257,-7.775406" projParameter="+proj=utm +zone=49 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <type id="highway.bridleway" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.bus_guideway" priority="1" numLanes="1" speed="27.78" allow="bus" oneway="1"/>
+    <type id="highway.cycleway" priority="1" numLanes="1" speed="5.56" allow="bicycle" oneway="0" width="1.00"/>
+    <type id="highway.footway" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.ford" priority="1" numLanes="1" speed="2.78" allow="army" oneway="0"/>
+    <type id="highway.living_street" priority="2" numLanes="1" speed="2.78" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.motorway" priority="14" numLanes="2" speed="39.44" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" oneway="1"/>
+    <type id="highway.motorway_link" priority="9" numLanes="1" speed="22.22" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" oneway="1"/>
+    <type id="highway.path" priority="1" numLanes="1" speed="5.56" allow="pedestrian bicycle" oneway="0" width="2.00"/>
+    <type id="highway.pedestrian" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.primary" priority="12" numLanes="2" speed="27.78" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.primary_link" priority="7" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.raceway" priority="15" numLanes="2" speed="83.33" allow="vip" oneway="0"/>
+    <type id="highway.residential" priority="3" numLanes="1" speed="13.89" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.secondary" priority="11" numLanes="1" speed="27.78" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.secondary_link" priority="6" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.service" priority="1" numLanes="1" speed="5.56" allow="pedestrian delivery bicycle" oneway="0"/>
+    <type id="highway.stairs" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.step" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.steps" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.tertiary" priority="10" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.tertiary_link" priority="5" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.track" priority="1" numLanes="1" speed="5.56" allow="pedestrian motorcycle moped bicycle" oneway="0"/>
+    <type id="highway.trunk" priority="13" numLanes="2" speed="27.78" disallow="pedestrian bicycle tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.trunk_link" priority="8" numLanes="1" speed="22.22" disallow="pedestrian bicycle tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.unclassified" priority="4" numLanes="1" speed="13.89" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="highway.unsurfaced" priority="1" numLanes="1" speed="8.33" disallow="tram rail_urban rail rail_electric rail_fast ship" oneway="0"/>
+    <type id="railway.highspeed" priority="21" numLanes="1" speed="69.44" allow="rail_fast" oneway="1"/>
+    <type id="railway.light_rail" priority="19" numLanes="1" speed="27.78" allow="rail_urban" oneway="1"/>
+    <type id="railway.preserved" priority="16" numLanes="1" speed="27.78" allow="rail" oneway="1"/>
+    <type id="railway.rail" priority="20" numLanes="1" speed="44.44" allow="rail" oneway="1"/>
+    <type id="railway.subway" priority="18" numLanes="1" speed="27.78" allow="rail_urban" oneway="1"/>
+    <type id="railway.tram" priority="17" numLanes="1" speed="13.89" allow="tram" oneway="1"/>
+
+    <edge id=":1001305074#1-AddedOnRampNode_0" function="internal">
+        <lane id=":1001305074#1-AddedOnRampNode_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.00" shape="2445.63,382.52 2444.37,374.62"/>
+        <lane id=":1001305074#1-AddedOnRampNode_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.00" shape="2442.47,383.03 2441.21,375.13"/>
+    </edge>
+    <edge id=":1262692922_0" function="internal">
+        <lane id=":1262692922_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.15" shape="2048.18,506.40 2050.59,506.64 2052.21,507.16 2053.83,507.67 2056.24,507.83"/>
+        <lane id=":1262692922_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.15" shape="2048.17,503.20 2050.55,503.44 2052.15,503.96 2053.74,504.47 2056.12,504.63"/>
+        <lane id=":1262692922_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.15" shape="2048.17,503.20 2050.52,502.94 2052.09,502.37 2053.65,501.77 2056.00,501.44"/>
+    </edge>
+    <edge id=":1664896774_0" function="internal">
+        <lane id=":1664896774_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="20.84" length="0.32" shape="1729.77,496.59 1729.44,496.59"/>
+        <lane id=":1664896774_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="20.84" length="0.32" shape="1729.80,499.79 1729.50,499.79"/>
+    </edge>
+    <edge id=":1664896774_2" function="internal">
+        <lane id=":1664896774_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.65" length="2.34" shape="1729.80,499.79 1728.61,500.60 1728.22,501.40"/>
+    </edge>
+    <edge id=":1664896774_5" function="internal">
+        <lane id=":1664896774_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.65" length="2.34" shape="1728.22,501.40 1728.63,502.20 1729.83,502.99"/>
+    </edge>
+    <edge id=":1664896774_3" function="internal">
+        <lane id=":1664896774_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="20.84" length="0.28" shape="1729.60,506.19 1729.87,506.19"/>
+        <lane id=":1664896774_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="20.84" length="0.28" shape="1729.55,502.99 1729.83,502.99"/>
+    </edge>
+    <edge id=":1903473308_0" function="internal">
+        <lane id=":1903473308_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="15.76" length="8.49" shape="2495.53,491.78 2493.13,491.48 2491.62,490.68 2490.19,489.55 2488.02,488.23"/>
+    </edge>
+    <edge id=":1903473308_1" function="internal">
+        <lane id=":1903473308_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.63" shape="2495.53,491.78 2486.90,491.79"/>
+        <lane id=":1903473308_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.63" shape="2495.54,494.98 2486.91,494.99"/>
+        <lane id=":1903473308_1_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.63" shape="2495.55,498.18 2486.92,498.19"/>
+    </edge>
+    <edge id=":1903473313_0" function="internal">
+        <lane id=":1903473313_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.20" shape="2070.80,493.74 2068.39,493.53 2066.78,493.02 2065.16,492.50 2062.76,492.32"/>
+        <lane id=":1903473313_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.20" shape="2070.85,496.94 2068.46,496.73 2066.85,496.21 2065.24,495.70 2062.85,495.52"/>
+    </edge>
+    <edge id=":1903473340_0" function="internal">
+        <lane id=":1903473340_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="25.00" length="2.96" shape="2440.71,461.01 2441.09,463.95"/>
+    </edge>
+    <edge id=":1903473340_1" function="internal">
+        <lane id=":1903473340_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.02" shape="2443.89,460.59 2444.29,463.56"/>
+        <lane id=":1903473340_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.02" shape="2447.06,460.17 2447.47,463.18"/>
+    </edge>
+    <edge id=":1903473341_0" function="internal">
+        <lane id=":1903473341_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.02" shape="2461.25,479.72 2460.76,476.78"/>
+        <lane id=":1903473341_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.02" shape="2458.10,480.28 2457.60,477.28"/>
+    </edge>
+    <edge id=":1903473341_2" function="internal">
+        <lane id=":1903473341_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="25.00" length="3.04" shape="2463.71,479.28 2463.85,478.39 2463.98,477.77 2464.02,477.16 2463.92,476.27"/>
+    </edge>
+    <edge id=":1903473346_0" function="internal">
+        <lane id=":1903473346_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.55" length="15.25" shape="2437.15,486.96 2435.40,488.75 2432.45,490.03 2428.32,490.81 2423.00,491.09"/>
+    </edge>
+    <edge id=":1903473346_1" function="internal">
+        <lane id=":1903473346_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="15.17" shape="2438.18,491.14 2423.00,491.09"/>
+        <lane id=":1903473346_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="15.17" shape="2438.18,494.34 2423.02,494.29"/>
+    </edge>
+    <edge id=":1903473346_3" function="internal">
+        <lane id=":1903473346_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="25.00" length="11.53" shape="2423.05,500.69 2426.47,501.04 2428.81,501.92 2430.98,503.06 2433.92,504.15"/>
+    </edge>
+    <edge id=":1903473346_4" function="internal">
+        <lane id=":1903473346_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="15.13" shape="2423.05,500.69 2438.17,500.74"/>
+        <lane id=":1903473346_4_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="15.13" shape="2423.03,497.49 2438.18,497.54"/>
+    </edge>
+    <edge id=":1903473360_0" function="internal">
+        <lane id=":1903473360_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="12.64" shape="1969.36,493.97 1965.75,494.42 1963.26,494.49 1960.76,494.40 1957.11,494.35"/>
+        <lane id=":1903473360_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="12.64" shape="1970.13,497.08 1966.31,497.57 1963.67,497.67 1961.01,497.59 1957.15,497.55"/>
+    </edge>
+    <edge id=":1903473360_2" function="internal">
+        <lane id=":1903473360_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="5.38" shape="1957.22,503.95 1958.56,504.04 1959.45,504.30 1960.34,504.64 1961.65,505.01"/>
+        <lane id=":1903473360_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="5.38" shape="1957.18,500.75 1958.99,500.85 1960.20,501.16 1961.40,501.59 1963.17,502.07"/>
+    </edge>
+    <edge id=":1903473360_4" function="internal">
+        <lane id=":1903473360_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.65" length="1.44" shape="1957.18,500.75 1958.37,499.94"/>
+    </edge>
+    <edge id=":1903473360_5" function="internal">
+        <lane id=":1903473360_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.65" length="3.23" shape="1958.37,499.94 1958.76,499.13 1958.36,498.34 1957.15,497.55"/>
+    </edge>
+    <edge id=":1903473363_0" function="internal">
+        <lane id=":1903473363_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.76" length="14.76" shape="2444.24,506.87 2447.14,508.67 2449.42,511.23 2451.08,514.55 2452.12,518.63"/>
+    </edge>
+    <edge id=":1903473363_1" function="internal">
+        <lane id=":1903473363_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="13.34" shape="2449.95,505.46 2452.12,518.63"/>
+        <lane id=":1903473363_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="13.34" shape="2453.11,504.94 2455.28,518.11"/>
+    </edge>
+    <edge id=":3885907857_0" function="internal">
+        <lane id=":3885907857_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="9.09" shape="2203.55,492.23 2200.81,491.76 2199.02,490.76 2197.23,489.84 2194.51,489.64"/>
+        <lane id=":3885907857_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="9.09" shape="2203.57,495.43 2200.92,494.96 2199.20,493.95 2197.48,493.03 2194.85,492.82"/>
+        <lane id=":3885907857_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="9.09" shape="2203.57,495.43 2201.08,495.46 2199.37,495.56 2197.67,495.73 2195.18,496.00"/>
+    </edge>
+    <edge id=":3885907857_3" function="internal">
+        <lane id=":3885907857_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="7.95" shape="2195.82,501.97 2203.61,501.83"/>
+        <lane id=":3885907857_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="7.95" shape="2195.48,498.78 2203.59,498.63"/>
+    </edge>
+    <edge id=":908329006-AddedOffRampNode_0" function="internal">
+        <lane id=":908329006-AddedOffRampNode_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.27" shape="2427.08,359.57 2427.06,362.08 2426.28,363.80 2425.49,365.52 2425.47,368.04"/>
+        <lane id=":908329006-AddedOffRampNode_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.27" shape="2427.08,359.57 2428.62,367.42"/>
+        <lane id=":908329006-AddedOffRampNode_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="8.27" shape="2430.23,358.96 2431.76,366.81"/>
+    </edge>
+    <edge id=":cluster_1903473311_3885907862_0" function="internal">
+        <lane id=":cluster_1903473311_3885907862_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="10.45" shape="2169.79,489.93 2166.88,489.59 2164.87,489.42 2162.86,489.38 2159.93,489.41"/>
+        <lane id=":cluster_1903473311_3885907862_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="10.45" shape="2170.39,493.22 2167.31,492.85 2165.20,492.66 2163.07,492.59 2159.98,492.61"/>
+        <lane id=":cluster_1903473311_3885907862_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="10.45" shape="2170.99,496.52 2167.75,496.12 2165.52,495.89 2163.29,495.80 2160.02,495.81"/>
+    </edge>
+    <edge id=":cluster_1903473311_3885907862_3" function="internal">
+        <lane id=":cluster_1903473311_3885907862_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="12.12" shape="2160.17,505.72 2163.78,505.50 2166.20,504.80 2168.60,503.87 2172.17,503.00"/>
+        <lane id=":cluster_1903473311_3885907862_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="12.12" shape="2160.12,502.51 2163.58,502.30 2165.89,501.60 2168.18,500.70 2171.59,499.85"/>
+    </edge>
+    <edge id=":cluster_1903473311_3885907862_5" function="internal">
+        <lane id=":cluster_1903473311_3885907862_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.78" length="1.79" shape="2160.07,499.31 2161.37,498.42 2161.47,498.23"/>
+    </edge>
+    <edge id=":cluster_1903473311_3885907862_6" function="internal">
+        <lane id=":cluster_1903473311_3885907862_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="3.78" length="3.32" shape="2161.47,498.23 2161.80,497.54 2161.35,496.67 2160.02,495.81"/>
+    </edge>
+    <edge id=":simpang_gramedia_0" function="internal">
+        <lane id=":simpang_gramedia_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="8.27" length="13.52" shape="2470.01,491.87 2466.98,491.35 2464.59,489.66 2462.85,486.80 2461.76,482.77"/>
+    </edge>
+    <edge id=":simpang_gramedia_1" function="internal">
+        <lane id=":simpang_gramedia_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="27.89" shape="2470.01,491.87 2442.11,491.14"/>
+        <lane id=":simpang_gramedia_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="27.89" shape="2470.07,495.07 2442.20,494.34"/>
+    </edge>
+    <edge id=":simpang_gramedia_3" function="internal">
+        <lane id=":simpang_gramedia_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="9.72" length="23.84" shape="2470.07,495.07 2463.63,496.03 2456.87,498.38 2451.67,501.62 2449.92,505.27"/>
+        <lane id=":simpang_gramedia_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="8.72" length="18.93" shape="2470.13,498.27 2464.83,498.90 2459.13,500.39 2454.67,502.45 2453.08,504.75"/>
+    </edge>
+    <edge id=":simpang_gramedia_5" function="internal">
+        <lane id=":simpang_gramedia_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="21.66" shape="2465.17,504.16 2461.76,482.77"/>
+    </edge>
+    <edge id=":simpang_gramedia_6" function="internal">
+        <lane id=":simpang_gramedia_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.91" length="28.98" shape="2465.17,504.16 2463.00,498.47 2458.43,494.40 2451.47,491.96 2442.11,491.14"/>
+    </edge>
+    <edge id=":simpang_gramedia_7" function="internal">
+        <lane id=":simpang_gramedia_7_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="21.65" shape="2462.01,504.68 2458.60,483.30"/>
+    </edge>
+    <edge id=":simpang_gramedia_8" function="internal">
+        <lane id=":simpang_gramedia_8_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.95" length="24.35" shape="2462.01,504.68 2460.19,500.16 2456.29,496.93 2450.29,494.99 2442.20,494.34"/>
+    </edge>
+    <edge id=":simpang_gramedia_9" function="internal">
+        <lane id=":simpang_gramedia_9_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="7.11" length="9.62" shape="2442.39,500.74 2445.41,501.02 2447.67,501.87 2449.17,503.29 2449.92,505.27"/>
+    </edge>
+    <edge id=":simpang_gramedia_10" function="internal">
+        <lane id=":simpang_gramedia_10_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.59" length="28.90" shape="2442.39,500.74 2449.34,499.16 2455.92,495.01 2460.58,489.24 2461.76,482.77"/>
+        <lane id=":simpang_gramedia_10_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="9.63" length="23.68" shape="2442.30,497.54 2448.06,496.32 2453.60,493.09 2457.57,488.53 2458.60,483.30"/>
+    </edge>
+    <edge id=":simpang_gramedia_12" function="internal">
+        <lane id=":simpang_gramedia_12_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="6.31" length="9.16" shape="2447.19,485.20 2447.13,487.80 2446.26,489.66 2444.58,490.77 2442.11,491.14"/>
+    </edge>
+    <edge id=":simpang_gramedia_13" function="internal">
+        <lane id=":simpang_gramedia_13_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="20.25" shape="2447.19,485.20 2449.92,505.27"/>
+    </edge>
+    <edge id=":simpang_gramedia_14" function="internal">
+        <lane id=":simpang_gramedia_14_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="7.85" length="14.81" shape="2450.35,484.68 2450.25,488.91 2448.86,491.93 2446.18,493.74 2442.20,494.34"/>
+    </edge>
+    <edge id=":simpang_gramedia_15" function="internal">
+        <lane id=":simpang_gramedia_15_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="20.25" shape="2450.35,484.68 2453.08,504.75"/>
+    </edge>
+
+    <edge id="jlcikditiro_barat_1" from="simpang_gramedia" to="1903473363" name="Jalan Cik di Tiro" priority="12" type="highway.primary" spreadType="center" shape="2449.97,495.73 2453.58,517.65">
+        <lane id="jlcikditiro_barat_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="0.20" shape="2449.92,505.27 2449.95,505.46">
+            <param key="origId" value="153821715"/>
+        </lane>
+        <lane id="jlcikditiro_barat_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="0.20" shape="2453.08,504.75 2453.11,504.94">
+            <param key="origId" value="153821715"/>
+        </lane>
+        <param key="origFrom" value="271845942"/>
+    </edge>
+    <edge id="jlcikditiro_barat_2" from="1903473363" to="1664585369" name="Jalan Cik di Tiro" priority="12" type="highway.primary" spreadType="center" shape="2453.58,517.65 2468.69,609.44 2470.51,620.44 2472.08,630.02 2477.34,661.93 2480.54,681.40 2482.42,692.80 2487.64,724.56 2492.74,756.87 2496.33,779.67 2499.82,801.84 2501.03,809.48 2503.40,825.12 2508.49,856.79 2543.03,1075.90 2546.92,1100.55 2561.24,1191.42 2569.23,1242.05">
+        <lane id="jlcikditiro_barat_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="732.85" shape="2452.12,518.63 2467.11,609.70 2468.93,620.70 2470.50,630.28 2475.76,662.19 2478.96,681.66 2480.84,693.06 2486.06,724.81 2491.16,757.12 2494.75,779.92 2498.24,802.09 2499.45,809.73 2501.82,825.37 2506.91,857.04 2541.45,1076.15 2545.34,1100.80 2559.66,1191.67 2567.65,1242.30">
+            <param key="origId" value="153821715 1001303582"/>
+        </lane>
+        <lane id="jlcikditiro_barat_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="732.85" shape="2455.28,518.11 2470.27,609.18 2472.09,620.18 2473.66,629.76 2478.92,661.67 2482.12,681.14 2484.00,692.54 2489.22,724.31 2494.32,756.62 2497.91,779.42 2501.40,801.59 2502.61,809.23 2504.98,824.87 2510.07,856.54 2544.61,1075.65 2548.50,1100.30 2562.82,1191.17 2570.81,1241.80">
+            <param key="origId" value="153821715 1001303582"/>
+        </lane>
+    </edge>
+    <edge id="jlcikditiro_timur_1" from="7265447247" to="simpang_gramedia" name="Jalan Cik di Tiro" priority="12" type="highway.primary" spreadType="center" shape="2578.35,1241.41 2570.24,1190.27 2569.37,1184.43 2565.73,1161.74 2555.66,1098.15 2551.92,1074.56 2548.34,1051.94 2517.72,857.05 2501.43,755.79 2496.14,722.42 2482.18,628.95 2480.71,619.09 2479.08,608.19 2468.38,536.53 2465.08,514.39 2462.21,495.21">
+        <lane id="jlcikditiro_timur_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="745.88" shape="2579.93,1241.16 2571.82,1190.02 2570.95,1184.19 2567.31,1161.49 2557.24,1097.90 2553.50,1074.31 2549.92,1051.69 2519.30,856.80 2503.01,755.54 2497.72,722.18 2483.76,628.71 2482.29,618.85 2480.66,607.95 2469.96,536.29 2466.66,514.15 2465.17,504.16">
+            <param key="origId" value="131708764 1001303581 1001303581"/>
+        </lane>
+        <lane id="jlcikditiro_timur_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="745.88" shape="2576.77,1241.66 2568.66,1190.52 2567.79,1184.67 2564.15,1161.99 2554.08,1098.40 2550.34,1074.81 2546.76,1052.19 2516.14,857.30 2499.85,756.04 2494.56,722.66 2480.60,629.19 2479.13,619.33 2477.50,608.43 2466.80,536.77 2463.50,514.63 2462.01,504.68">
+            <param key="origId" value="131708764 1001303581 1001303581"/>
+        </lane>
+        <param key="origTo" value="1664585451"/>
+    </edge>
+    <edge id="jljendsudirman_satuarah_1" from="269401983" to="1903473308" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="3376.96,491.56 2863.80,493.97 2857.64,493.99 2848.99,494.01 2827.12,494.07 2778.09,494.21 2774.48,494.21 2734.71,494.32 2679.69,494.47 2603.69,494.68 2583.88,494.73 2546.17,494.84 2520.74,494.90 2497.79,494.97">
+        <lane id="jljendsudirman_satuarah_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="881.43" shape="3376.94,488.36 2863.79,490.77 2857.63,490.79 2848.98,490.81 2827.11,490.87 2778.08,491.01 2774.48,491.01 2734.70,491.12 2679.68,491.27 2603.68,491.48 2583.87,491.53 2546.16,491.64 2520.73,491.70 2495.53,491.78">
+            <param key="origId" value="141318123"/>
+        </lane>
+        <lane id="jljendsudirman_satuarah_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="881.43" shape="3376.96,491.56 2863.80,493.97 2857.64,493.99 2848.99,494.01 2827.12,494.07 2778.09,494.21 2774.48,494.21 2734.71,494.32 2679.69,494.47 2603.69,494.68 2583.88,494.73 2546.17,494.84 2520.74,494.90 2495.54,494.98">
+            <param key="origId" value="141318123"/>
+        </lane>
+        <lane id="jljendsudirman_satuarah_1_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="881.43" shape="3376.98,494.76 2863.81,497.17 2857.65,497.19 2849.00,497.21 2827.13,497.27 2778.10,497.41 2774.48,497.41 2734.72,497.52 2679.70,497.67 2603.70,497.88 2583.89,497.93 2546.18,498.04 2520.75,498.10 2495.55,498.18">
+            <param key="origId" value="141318123"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_satuarah_2" from="1903473308" to="simpang_gramedia" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2497.79,494.97 2473.06,495.02 2462.21,495.21">
+        <lane id="jljendsudirman_satuarah_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="16.84" shape="2486.90,491.79 2473.03,491.82 2470.01,491.87">
+            <param key="origId" value="358464188"/>
+        </lane>
+        <lane id="jljendsudirman_satuarah_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="16.84" shape="2486.91,494.99 2473.06,495.02 2470.07,495.07">
+            <param key="origId" value="358464188"/>
+        </lane>
+        <lane id="jljendsudirman_satuarah_2_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="16.84" shape="2486.92,498.19 2473.09,498.22 2470.13,498.27">
+            <param key="origId" value="358464188"/>
+        </lane>
+        <param key="origTo" value="1664585451"/>
+    </edge>
+    <edge id="jljendsudirman_satuarah_belokan" from="1903473308" to="1903473341" priority="7" type="highway.primary_link" spreadType="center" shape="2497.79,494.97 2489.99,489.18 2487.01,487.74 2484.28,486.81 2475.26,485.76 2472.12,485.18 2469.84,484.33 2466.10,482.14 2463.54,480.71 2464.01,476.80">
+        <lane id="jljendsudirman_satuarah_belokan_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="27.41" shape="2488.02,488.23 2487.01,487.74 2484.28,486.81 2475.26,485.76 2472.12,485.18 2469.84,484.33 2466.10,482.14 2463.54,480.71 2463.71,479.28">
+            <param key="origId" value="179907375"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_selatan_1" from="simpang_gramedia" to="1903473346" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="2449.97,495.73 2445.28,495.87 2443.26,495.94 2416.98,495.92">
+        <lane id="jljendsudirman_selatan_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.98" shape="2442.11,491.14 2438.18,491.14">
+            <param key="origId" value="131706287"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.98" shape="2442.20,494.34 2438.18,494.34">
+            <param key="origId" value="131706287"/>
+        </lane>
+        <param key="origFrom" value="271845942"/>
+    </edge>
+    <edge id="jljendsudirman_selatan_2" from="1903473346" to="3885907857" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="2416.98,495.92 2351.56,496.25 2323.29,496.40 2303.01,496.51 2290.35,496.57 2251.30,496.78 2238.68,496.84 2199.22,497.05">
+        <lane id="jljendsudirman_selatan_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="219.45" shape="2423.00,491.09 2351.54,491.45 2323.26,491.60 2302.99,491.71 2290.32,491.77 2251.27,491.98 2238.66,492.04 2203.55,492.23">
+            <param key="origId" value="358226630"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="219.45" shape="2423.02,494.29 2351.55,494.65 2323.28,494.80 2303.00,494.91 2290.34,494.97 2251.29,495.18 2238.67,495.24 2203.57,495.43">
+            <param key="origId" value="358226630"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_selatan_3" from="3885907857" to="cluster_1903473311_3885907862" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2199.88,492.29 2180.00,494.39 2172.46,493.47 2167.54,492.88 2164.22,492.55">
+        <lane id="jljendsudirman_selatan_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="24.61" shape="2194.51,489.64 2180.03,491.17 2172.84,490.29 2169.79,489.93">
+            <param key="origId" value="179907370"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="24.61" shape="2194.85,492.82 2180.00,494.39 2172.46,493.47 2170.39,493.22">
+            <param key="origId" value="179907370"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_3_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="24.61" shape="2195.18,496.00 2179.97,497.61 2172.08,496.65 2170.99,496.52">
+            <param key="origId" value="179907370"/>
+        </lane>
+        <param key="origTo" value="1903473311"/>
+    </edge>
+    <edge id="jljendsudirman_selatan_4" from="cluster_1903473311_3885907862" to="1903473313" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2164.22,492.55 2155.83,492.67 2143.34,492.66 2137.31,492.66 2066.80,493.81">
+        <lane id="jljendsudirman_selatan_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="89.19" shape="2159.93,489.41 2155.81,489.47 2143.34,489.46 2137.28,489.46 2070.74,490.55">
+            <param key="origId" value="1018193254"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_4_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="89.19" shape="2159.98,492.61 2155.83,492.67 2143.34,492.66 2137.31,492.66 2070.80,493.74">
+            <param key="origId" value="1018193254"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_4_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="89.19" shape="2160.02,495.81 2155.85,495.87 2143.34,495.86 2137.34,495.86 2070.85,496.94">
+            <param key="origId" value="1018193254"/>
+        </lane>
+        <param key="origFrom" value="1903473311"/>
+    </edge>
+    <edge id="jljendsudirman_selatan_5" from="1903473313" to="1903473360" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2066.80,493.81 2050.61,494.25 2008.43,494.32 1971.81,495.20 1967.24,495.92 1962.36,497.00 1953.51,499.19">
+        <lane id="jljendsudirman_selatan_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="93.10" shape="2062.76,492.32 2050.59,492.65 2008.41,492.72 1971.67,493.60 1969.36,493.97">
+            <param key="origId" value="358524448 179907369 179907374"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_5_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="93.10" shape="2062.85,495.52 2050.63,495.85 2008.45,495.92 1971.95,496.80 1970.13,497.08">
+            <param key="origId" value="358524448 179907369 179907374"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_selatan_6" from="1903473360" to="1664896774" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="1953.51,499.19 1939.38,499.34 1932.48,499.40 1917.41,499.55 1902.61,499.69 1880.72,499.91 1861.49,500.09 1857.08,500.14 1839.62,500.31 1826.78,500.44 1813.26,500.57 1782.38,500.87 1771.01,500.99 1753.40,501.16 1729.67,501.39">
+        <lane id="jljendsudirman_selatan_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="227.35" shape="1957.11,494.35 1939.33,494.54 1932.43,494.60 1917.36,494.75 1902.56,494.89 1880.67,495.11 1861.44,495.29 1857.03,495.34 1839.57,495.51 1826.73,495.64 1813.21,495.77 1782.33,496.07 1770.96,496.19 1753.35,496.36 1729.77,496.59">
+            <param key="origId" value="293600459"/>
+        </lane>
+        <lane id="jljendsudirman_selatan_6_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="227.35" shape="1957.15,497.55 1939.36,497.74 1932.46,497.80 1917.39,497.95 1902.59,498.09 1880.70,498.31 1861.47,498.49 1857.06,498.54 1839.60,498.71 1826.76,498.84 1813.24,498.97 1782.36,499.27 1770.99,499.39 1753.38,499.56 1729.80,499.79">
+            <param key="origId" value="293600459"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_selatan_7" from="1664896774" to="J9" priority="-1">
+        <lane id="jljendsudirman_selatan_7_0" index="0" speed="13.89" length="102.26" shape="1729.44,496.59 1627.19,498.26"/>
+        <lane id="jljendsudirman_selatan_7_1" index="1" speed="13.89" length="102.26" shape="1729.50,499.79 1627.24,501.46"/>
+    </edge>
+    <edge id="jljendsudirman_selatan_belokan" from="1903473340" to="1903473346" priority="7" type="highway.primary_link" spreadType="center" shape="2440.91,462.48 2441.55,467.78 2440.66,470.88 2440.08,475.71 2439.58,480.40 2438.77,484.14 2437.08,487.09 2434.88,488.97 2430.76,491.21 2416.98,495.92">
+        <lane id="jljendsudirman_selatan_belokan_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="23.74" shape="2441.09,463.95 2441.55,467.78 2440.66,470.88 2440.08,475.71 2439.58,480.40 2438.77,484.14 2437.15,486.96">
+            <param key="origId" value="179907368"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_utara_2" from="J8" to="1664896774" priority="-1">
+        <lane id="jljendsudirman_utara_2_0" index="0" speed="13.89" length="101.88" shape="1627.73,507.89 1729.60,506.19"/>
+        <lane id="jljendsudirman_utara_2_1" index="1" speed="13.89" length="101.88" shape="1627.68,504.69 1729.55,502.99"/>
+    </edge>
+    <edge id="jljendsudirman_utara_3" from="1664896774" to="1903473360" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="1729.67,501.39 1753.40,501.16 1771.01,500.99 1782.38,500.87 1813.26,500.57 1826.78,500.44 1839.62,500.31 1857.08,500.14 1861.49,500.09 1880.72,499.91 1902.61,499.69 1917.41,499.55 1932.48,499.40 1939.38,499.34 1953.51,499.19">
+        <lane id="jljendsudirman_utara_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="227.36" shape="1729.87,506.19 1753.45,505.96 1771.06,505.79 1782.43,505.67 1813.31,505.37 1826.83,505.24 1839.67,505.11 1857.13,504.94 1861.54,504.89 1880.77,504.71 1902.66,504.49 1917.46,504.35 1932.53,504.20 1939.43,504.14 1957.22,503.95">
+            <param key="origId" value="293600459"/>
+        </lane>
+        <lane id="jljendsudirman_utara_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="227.36" shape="1729.83,502.99 1753.42,502.76 1771.03,502.59 1782.40,502.47 1813.28,502.17 1826.80,502.04 1839.64,501.91 1857.10,501.74 1861.51,501.69 1880.74,501.51 1902.63,501.29 1917.43,501.15 1932.50,501.00 1939.40,500.94 1957.18,500.75">
+            <param key="origId" value="293600459"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_utara_4" from="1903473360" to="1262692922" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="1953.51,499.19 1961.42,503.33 1968.89,504.92 1972.93,505.23 2008.33,504.98 2052.15,504.78">
+        <lane id="jljendsudirman_utara_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="85.92" shape="1961.65,505.01 1968.66,506.51 1972.87,506.83 2008.34,506.58 2048.18,506.40">
+            <param key="origId" value="110609173 110609151"/>
+        </lane>
+        <lane id="jljendsudirman_utara_4_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="85.92" shape="1963.17,502.07 1969.12,503.33 1972.99,503.63 2008.32,503.38 2048.17,503.20">
+            <param key="origId" value="110609173 110609151"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_utara_5" from="1262692922" to="cluster_1903473311_3885907862" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2052.15,504.78 2099.20,503.06 2141.51,502.51 2143.49,502.49 2156.07,502.41 2164.61,502.63">
+        <lane id="jljendsudirman_utara_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="104.03" shape="2056.24,507.83 2099.28,506.26 2141.55,505.71 2143.51,505.69 2156.04,505.61 2160.17,505.72">
+            <param key="origId" value="141319809"/>
+        </lane>
+        <lane id="jljendsudirman_utara_5_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="104.03" shape="2056.12,504.63 2099.20,503.06 2141.51,502.51 2143.49,502.49 2156.07,502.41 2160.12,502.51">
+            <param key="origId" value="141319809"/>
+        </lane>
+        <lane id="jljendsudirman_utara_5_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="104.03" shape="2056.00,501.44 2099.12,499.86 2141.47,499.31 2143.47,499.29 2156.10,499.21 2160.07,499.31">
+            <param key="origId" value="141319809"/>
+        </lane>
+        <param key="origTo" value="3885907862"/>
+    </edge>
+    <edge id="jljendsudirman_utara_6" from="cluster_1903473311_3885907862" to="3885907857" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" spreadType="center" shape="2164.61,502.63 2172.59,501.31 2199.73,500.21">
+        <lane id="jljendsudirman_utara_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="23.80" shape="2172.17,503.00 2172.75,502.90 2195.82,501.97">
+            <param key="origId" value="385235940"/>
+        </lane>
+        <lane id="jljendsudirman_utara_6_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="23.80" shape="2171.59,499.85 2172.43,499.72 2195.48,498.78">
+            <param key="origId" value="385235940"/>
+        </lane>
+        <param key="origFrom" value="3885907862"/>
+    </edge>
+    <edge id="jljendsudirman_utara_7" from="3885907857" to="1903473346" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="2199.22,497.05 2238.68,496.84 2251.30,496.78 2290.35,496.57 2303.01,496.51 2323.29,496.40 2351.56,496.25 2416.98,495.92">
+        <lane id="jljendsudirman_utara_7_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="219.45" shape="2203.61,501.83 2238.70,501.64 2251.33,501.58 2290.38,501.37 2303.03,501.31 2323.32,501.20 2351.58,501.05 2423.05,500.69">
+            <param key="origId" value="358226630"/>
+        </lane>
+        <lane id="jljendsudirman_utara_7_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="219.45" shape="2203.59,498.63 2238.69,498.44 2251.31,498.38 2290.36,498.17 2303.02,498.11 2323.30,498.00 2351.57,497.85 2423.03,497.49">
+            <param key="origId" value="358226630"/>
+        </lane>
+    </edge>
+    <edge id="jljendsudirman_utara_8" from="1903473346" to="simpang_gramedia" name="Jalan Jenderal Sudirman" priority="12" type="highway.primary" shape="2416.98,495.92 2443.26,495.94 2445.28,495.87 2449.97,495.73">
+        <lane id="jljendsudirman_utara_8_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="4.17" shape="2438.17,500.74 2442.39,500.74">
+            <param key="origId" value="131706287"/>
+        </lane>
+        <lane id="jljendsudirman_utara_8_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="4.17" shape="2438.18,497.54 2442.30,497.54">
+            <param key="origId" value="131706287"/>
+        </lane>
+        <param key="origTo" value="271845942"/>
+    </edge>
+    <edge id="jljendsudirman_utara_belokan" from="1903473346" to="1903473363" priority="7" type="highway.primary_link" spreadType="center" shape="2416.98,495.92 2425.38,500.91 2428.06,502.34 2430.52,503.24 2434.02,504.18 2437.48,504.96 2442.41,506.06 2445.25,507.32 2447.22,508.91 2450.16,512.43 2453.58,517.65">
+        <lane id="jljendsudirman_utara_belokan_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="10.70" shape="2433.92,504.15 2434.02,504.18 2437.48,504.96 2442.41,506.06 2444.24,506.87">
+            <param key="origId" value="179907373"/>
+        </lane>
+    </edge>
+    <edge id="jlsuroto_barat_1" from="1903473340" to="simpang_gramedia" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2445.67,461.84 2448.72,484.47 2449.16,488.37 2449.97,495.73">
+        <lane id="jlsuroto_barat_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="21.76" shape="2444.29,463.56 2447.13,484.68 2447.19,485.20">
+            <param key="origId" value="153821711"/>
+        </lane>
+        <lane id="jlsuroto_barat_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="21.76" shape="2447.47,463.18 2450.31,484.26 2450.35,484.68">
+            <param key="origId" value="153821711"/>
+        </lane>
+        <param key="origTo" value="271845942"/>
+    </edge>
+    <edge id="jlsuroto_barat_2" from="908329006-AddedOffRampNode" to="1903473340" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2427.85,363.50 2432.37,386.68 2441.44,442.16 2444.08,462.06">
+        <lane id="jlsuroto_barat_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="94.43" shape="2425.47,368.04 2429.22,387.24 2438.27,442.63 2440.71,461.01">
+            <param key="origId" value="908329006 1001305073 153821711"/>
+        </lane>
+        <lane id="jlsuroto_barat_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="94.43" shape="2428.62,367.42 2432.37,386.68 2441.44,442.16 2443.89,460.59">
+            <param key="origId" value="908329006 1001305073 153821711"/>
+        </lane>
+        <lane id="jlsuroto_barat_2_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="94.43" shape="2431.76,366.81 2435.52,386.12 2444.61,441.69 2447.06,460.17">
+            <param key="origId" value="908329006 1001305073 153821711"/>
+        </lane>
+    </edge>
+    <edge id="jlsuroto_barat_3" from="10038783344" to="908329006-AddedOffRampNode" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2381.11,83.09 2385.84,111.03 2397.86,181.98 2399.73,193.01 2411.39,261.81 2421.43,320.53 2427.62,353.96 2429.42,363.19">
+        <lane id="jlsuroto_barat_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="280.24" shape="2379.53,83.36 2384.26,111.30 2396.28,182.25 2398.15,193.28 2409.81,262.08 2419.85,320.81 2426.05,354.25 2427.08,359.57">
+            <param key="origId" value="908329006 1001305073 153821711"/>
+        </lane>
+        <lane id="jlsuroto_barat_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="280.24" shape="2382.69,82.82 2387.42,110.76 2399.44,181.71 2401.31,192.74 2412.97,261.54 2423.01,320.25 2429.19,353.67 2430.23,358.96">
+            <param key="origId" value="908329006 1001305073 153821711"/>
+        </lane>
+    </edge>
+    <edge id="jlsuroto_timur_1" from="simpang_gramedia" to="1903473341" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2462.21,495.21 2460.97,487.75 2459.27,477.56">
+        <lane id="jlsuroto_timur_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.07" shape="2461.76,482.77 2461.25,479.72">
+            <param key="origId" value="1001305074"/>
+        </lane>
+        <lane id="jlsuroto_timur_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="3.07" shape="2458.60,483.30 2458.10,480.28">
+            <param key="origId" value="1001305074"/>
+        </lane>
+        <param key="origFrom" value="1664585451"/>
+    </edge>
+    <edge id="jlsuroto_timur_2" from="1903473341" to="1001305074#1-AddedOnRampNode" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2460.85,477.31 2445.00,378.57">
+        <lane id="jlsuroto_timur_2_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="95.46" acceleration="1" shape="2463.92,476.27 2448.79,382.02">
+            <param key="origId" value="1001305074 25006158"/>
+        </lane>
+        <lane id="jlsuroto_timur_2_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="95.46" shape="2460.76,476.78 2445.63,382.52">
+            <param key="origId" value="1001305074 25006158"/>
+        </lane>
+        <lane id="jlsuroto_timur_2_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="95.46" shape="2457.60,477.28 2442.47,383.03">
+            <param key="origId" value="1001305074 25006158"/>
+        </lane>
+    </edge>
+    <edge id="jlsuroto_timur_3" from="1001305074#1-AddedOnRampNode" to="7643197305" name="Jalan Suroto" priority="12" type="highway.primary" spreadType="center" shape="2443.42,378.83 2439.09,351.86 2433.68,320.44 2430.98,304.79 2424.14,262.80 2421.99,250.88 2411.23,190.04 2408.84,176.23 2397.28,109.05 2391.40,78.31">
+        <lane id="jlsuroto_timur_3_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="301.00" shape="2444.37,374.62 2440.67,351.60 2435.26,320.17 2432.56,304.53 2425.72,262.53 2423.57,250.60 2412.81,189.76 2410.42,175.96 2398.85,108.76 2392.97,78.01">
+            <param key="origId" value="1001305074 25006158"/>
+        </lane>
+        <lane id="jlsuroto_timur_3_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="27.78" length="301.00" shape="2441.21,375.13 2437.51,352.12 2432.10,320.71 2429.40,305.05 2422.56,263.07 2420.41,251.16 2409.65,190.32 2407.26,176.50 2395.71,109.34 2389.83,78.61">
+            <param key="origId" value="1001305074 25006158"/>
+        </lane>
+    </edge>
+
+    <tlLogic id="tls_gramedia" type="static" programID="0" offset="0">
+        <phase duration="24" state="GGGGGrrrrrrrrrrr"/>
+        <phase duration="6"  state="yyyyyrrrrrrrrrrr"/>
+        <phase duration="24" state="rrrrrGGGgrrrrrrr"/>
+        <phase duration="6"  state="rrrrryyyyrrrrrrr"/>
+        <phase duration="24" state="rrrrrrrrrGGGrrrr"/>
+        <phase duration="6"  state="rrrrrrrrryyyrrrr"/>
+        <phase duration="24" state="rrrrrrrrrrrrGGGG"/>
+        <phase duration="6"  state="rrrrrrrrrrrryyyy"/>
+    </tlLogic>
+
+    <junction id="1001305074#1-AddedOnRampNode" type="priority" x="2443.42" y="378.83" incLanes="jlsuroto_timur_2_0 jlsuroto_timur_2_1 jlsuroto_timur_2_2" intLanes=":1001305074#1-AddedOnRampNode_0_0 :1001305074#1-AddedOnRampNode_0_1" shape="2450.37,381.76 2440.90,383.28 2439.63,375.38 2445.94,374.37 2447.24,377.23 2449.07,378.90 2449.86,380.03">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="10038783344" type="dead_end" x="2381.11" y="83.09" incLanes="" intLanes="" shape="2384.27,82.56 2377.95,83.62"/>
+    <junction id="1262692922" type="priority" x="2052.15" y="504.78" incLanes="jljendsudirman_utara_4_0 jljendsudirman_utara_4_1" intLanes=":1262692922_0_0 :1262692922_0_1 :1262692922_0_2" shape="2055.95,499.84 2056.30,509.43 2053.28,509.12 2052.24,508.76 2051.21,508.39 2049.93,508.11 2048.19,508.00 2048.16,501.60 2051.07,501.17 2052.05,500.77 2053.04,500.36 2054.26,500.02">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="1664585369" type="dead_end" x="2569.23" y="1242.05" incLanes="jlcikditiro_barat_2_0 jlcikditiro_barat_2_1" intLanes="" shape="2566.07,1242.55 2572.39,1241.55"/>
+    <junction id="1664896774" type="priority" x="1729.67" y="501.39" incLanes="jljendsudirman_selatan_6_0 jljendsudirman_selatan_6_1 jljendsudirman_utara_2_0 jljendsudirman_utara_2_1" intLanes=":1664896774_0_0 :1664896774_0_1 :1664896774_5_0 :1664896774_3_0 :1664896774_3_1" shape="1729.76,494.99 1729.88,507.79 1729.63,507.79 1729.42,494.99">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="11000" foes="11000" cont="1"/>
+        <request index="3" response="00000" foes="00100" cont="0"/>
+        <request index="4" response="00000" foes="00100" cont="0"/>
+    </junction>
+    <junction id="1903473308" type="priority" x="2497.79" y="494.97" incLanes="jljendsudirman_satuarah_1_0 jljendsudirman_satuarah_1_1 jljendsudirman_satuarah_1_2" intLanes=":1903473308_0_0 :1903473308_1_0 :1903473308_1_1 :1903473308_1_2" shape="2495.52,490.18 2495.55,499.78 2486.92,499.79 2486.90,490.19 2487.05,489.54 2488.99,486.92 2491.33,488.47 2492.12,489.15 2492.94,489.69 2494.00,490.05">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="1903473313" type="priority" x="2066.80" y="493.81" incLanes="jljendsudirman_selatan_4_0 jljendsudirman_selatan_4_1 jljendsudirman_selatan_4_2" intLanes=":1903473313_0_0 :1903473313_0_1" shape="2070.72,488.95 2070.87,498.54 2067.90,498.18 2066.88,497.81 2065.86,497.45 2064.61,497.19 2062.89,497.12 2062.72,490.72 2065.70,490.23 2066.72,489.82 2067.73,489.41 2068.99,489.09">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="1903473340" type="priority" x="2445.67" y="461.84" incLanes="jlsuroto_barat_2_0 jlsuroto_barat_2_1 jlsuroto_barat_2_2" intLanes=":1903473340_0_0 :1903473340_1_0 :1903473340_1_1" shape="2449.05,462.99 2439.50,464.14 2439.13,461.22 2448.64,459.96">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="1903473341" type="priority" x="2459.27" y="477.56" incLanes="jlsuroto_timur_1_0 jlsuroto_timur_1_1 jljendsudirman_satuarah_belokan_0" intLanes=":1903473341_0_0 :1903473341_0_1 :1903473341_2_0" shape="2465.36,478.99 2456.53,480.57 2456.02,477.54 2465.50,476.02 2465.61,477.11 2465.59,477.50 2465.53,477.89 2465.45,478.36">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="1903473346" type="priority" x="2416.98" y="495.92" incLanes="jljendsudirman_selatan_belokan_0 jljendsudirman_selatan_1_0 jljendsudirman_selatan_1_1 jljendsudirman_utara_7_0 jljendsudirman_utara_7_1" intLanes=":1903473346_0_0 :1903473346_1_0 :1903473346_1_1 :1903473346_3_0 :1903473346_4_0 :1903473346_4_1" shape="2436.38,485.10 2437.82,488.56 2437.36,489.10 2437.34,489.29 2437.48,489.43 2437.76,489.51 2438.18,489.54 2438.17,502.34 2435.54,502.38 2434.78,502.43 2434.40,502.50 2434.39,502.59 2434.76,502.71 2433.08,505.58 2430.94,504.86 2429.39,504.12 2428.14,503.41 2426.87,502.83 2425.28,502.43 2423.06,502.29 2422.99,489.49 2426.39,489.35 2429.32,488.98 2431.79,488.36 2433.79,487.51 2435.31,486.43">
+        <request index="0" response="000110" foes="000110" cont="0"/>
+        <request index="1" response="000000" foes="000001" cont="0"/>
+        <request index="2" response="000000" foes="000001" cont="0"/>
+        <request index="3" response="000000" foes="000000" cont="0"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000000" foes="000000" cont="0"/>
+    </junction>
+    <junction id="1903473360" type="priority" x="1953.51" y="499.19" incLanes="jljendsudirman_selatan_5_0 jljendsudirman_selatan_5_1 jljendsudirman_utara_3_0 jljendsudirman_utara_3_1" intLanes=":1903473360_0_0 :1903473360_0_1 :1903473360_2_0 :1903473360_2_1 :1903473360_5_0" shape="1968.97,492.41 1970.51,498.64 1967.82,499.09 1965.76,499.49 1964.35,499.84 1963.57,500.14 1963.43,500.39 1963.93,500.59 1960.89,506.49 1959.54,506.07 1959.07,505.86 1958.61,505.70 1958.03,505.59 1957.23,505.55 1957.10,492.75 1959.63,492.77 1961.51,492.84 1963.06,492.90 1964.60,492.89 1966.47,492.75">
+        <request index="0" response="00000" foes="10000" cont="0"/>
+        <request index="1" response="00000" foes="10000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00011" foes="00011" cont="1"/>
+    </junction>
+    <junction id="1903473363" type="priority" x="2453.58" y="517.65" incLanes="jljendsudirman_utara_belokan_0 jlcikditiro_barat_1_0 jlcikditiro_barat_1_1" intLanes=":1903473363_0_0 :1903473363_1_0 :1903473363_1_1" shape="2456.86,517.85 2450.54,518.89 2449.96,516.34 2449.08,514.09 2447.93,512.13 2446.49,510.45 2444.76,509.06 2442.75,507.96 2445.73,505.78 2447.27,506.19 2447.76,506.06 2448.08,505.71 2448.20,505.14 2448.15,504.36 2454.46,503.32">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="269401983" type="dead_end" x="3376.96" y="491.56" incLanes="" intLanes="" shape="3376.98,496.36 3376.94,486.76"/>
+    <junction id="3885907857" type="priority" x="2199.22" y="497.05" incLanes="jljendsudirman_selatan_2_0 jljendsudirman_selatan_2_1 jljendsudirman_utara_6_0 jljendsudirman_utara_6_1" intLanes=":3885907857_0_0 :3885907857_0_1 :3885907857_0_2 :3885907857_3_0 :3885907857_3_1" shape="2203.55,490.63 2203.61,503.43 2195.99,503.56 2194.34,488.05 2196.34,488.07 2197.78,488.50 2198.93,489.16 2200.09,489.86 2201.53,490.41">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00000" foes="00000" cont="0"/>
+    </junction>
+    <junction id="7265447247" type="dead_end" x="2578.35" y="1241.41" incLanes="" intLanes="" shape="2575.19,1241.91 2581.51,1240.91"/>
+    <junction id="7643197305" type="dead_end" x="2391.40" y="78.31" incLanes="jlsuroto_timur_3_0 jlsuroto_timur_3_1" intLanes="" shape="2394.54,77.71 2388.26,78.91"/>
+    <junction id="908329006-AddedOffRampNode" type="priority" x="2429.42" y="363.19" incLanes="jlsuroto_barat_3_0 jlsuroto_barat_3_1" intLanes=":908329006-AddedOffRampNode_0_0 :908329006-AddedOffRampNode_0_1 :908329006-AddedOffRampNode_0_2" shape="2433.33,366.51 2423.90,368.34 2424.14,365.21 2425.28,363.01 2425.62,361.68 2425.51,359.88 2431.80,358.65">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="J8" type="dead_end" x="1626.10" y="503.12" incLanes="" intLanes="" shape="1627.65,503.09 1627.76,509.49 1625.18,509.60 1624.59,502.78" customShape="1"/>
+    <junction id="J9" type="dead_end" x="1627.27" y="503.06" incLanes="jljendsudirman_selatan_7_0 jljendsudirman_selatan_7_1" intLanes="" shape="1627.17,496.66 1627.27,503.06"/>
+    <junction id="cluster_1903473311_3885907862" type="priority" x="2164.42" y="497.59" incLanes="jljendsudirman_selatan_3_0 jljendsudirman_selatan_3_1 jljendsudirman_selatan_3_2 jljendsudirman_utara_5_0 jljendsudirman_utara_5_1 jljendsudirman_utara_5_2" intLanes=":cluster_1903473311_3885907862_0_0 :cluster_1903473311_3885907862_0_1 :cluster_1903473311_3885907862_0_2 :cluster_1903473311_3885907862_3_0 :cluster_1903473311_3885907862_3_1 :cluster_1903473311_3885907862_6_0" shape="2169.49,488.28 2172.45,504.58 2169.83,505.15 2167.91,505.78 2166.35,506.39 2164.78,506.91 2162.85,507.24 2160.19,507.32 2159.91,487.81 2161.95,487.78 2163.46,487.78 2164.71,487.81 2165.95,487.89 2167.46,488.04">
+        <request index="0" response="000000" foes="100000" cont="0"/>
+        <request index="1" response="000000" foes="100000" cont="0"/>
+        <request index="2" response="000000" foes="100000" cont="0"/>
+        <request index="3" response="000000" foes="000000" cont="0"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000111" foes="000111" cont="1"/>
+        <param key="origEdgeIds" value="385235941"/>
+        <param key="origId" value="1903473311 3885907862"/>
+    </junction>
+    <junction id="simpang_gramedia" type="traffic_light" x="2456.09" y="495.47" incLanes="jljendsudirman_satuarah_2_0 jljendsudirman_satuarah_2_1 jljendsudirman_satuarah_2_2 jlcikditiro_timur_1_0 jlcikditiro_timur_1_1 jljendsudirman_utara_8_0 jljendsudirman_utara_8_1 jlsuroto_barat_1_0 jlsuroto_barat_1_1" intLanes=":simpang_gramedia_0_0 :simpang_gramedia_1_0 :simpang_gramedia_1_1 :simpang_gramedia_3_0 :simpang_gramedia_3_1 :simpang_gramedia_5_0 :simpang_gramedia_6_0 :simpang_gramedia_7_0 :simpang_gramedia_8_0 :simpang_gramedia_9_0 :simpang_gramedia_10_0 :simpang_gramedia_10_1 :simpang_gramedia_12_0 :simpang_gramedia_13_0 :simpang_gramedia_14_0 :simpang_gramedia_15_0" shape="2469.98,490.27 2470.15,499.87 2468.00,500.35 2467.30,500.91 2466.86,501.69 2466.68,502.69 2466.75,503.90 2448.57,506.89 2447.55,504.36 2446.66,503.48 2445.51,502.85 2444.11,502.47 2442.44,502.34 2442.06,489.54 2444.24,489.09 2444.95,488.52 2445.42,487.73 2445.64,486.71 2445.61,485.47 2463.34,482.50 2463.89,484.90 2464.66,486.86 2465.66,488.38 2466.88,489.45 2468.32,490.08">
+        <request index="0"  response="0000000000000000" foes="0000110010100000" cont="0"/>
+        <request index="1"  response="0000000000000000" foes="1111110111100000" cont="0"/>
+        <request index="2"  response="0000000000000000" foes="1111110111100000" cont="0"/>
+        <request index="3"  response="0000001000000000" foes="1010001111100000" cont="0"/>
+        <request index="4"  response="0000001000000000" foes="1010001111100000" cont="0"/>
+        <request index="5"  response="0000110000011111" foes="0000110000011111" cont="0"/>
+        <request index="6"  response="1111110010011110" foes="1111110010011110" cont="0"/>
+        <request index="7"  response="0000110000011111" foes="0000110001011111" cont="0"/>
+        <request index="8"  response="1111110000011110" foes="1111110000011110" cont="0"/>
+        <request index="9"  response="0000000000000000" foes="1010000000011000" cont="0"/>
+        <request index="10" response="0000000000000111" foes="1010000111100111" cont="0"/>
+        <request index="11" response="0000000000000111" foes="1010000111100111" cont="0"/>
+        <request index="12" response="0000000000000110" foes="0000000101000110" cont="0"/>
+        <request index="13" response="0000111000011110" foes="0100111101011110" cont="0"/>
+        <request index="14" response="0010000000000110" foes="0010000101000110" cont="0"/>
+        <request index="15" response="0000111000011110" foes="0000111101011110" cont="0"/>
+        <param key="origEdgeIds" value="-179907371 179907371"/>
+        <param key="origId" value="1664585451 271845942"/>
+    </junction>
+
+    <junction id=":1664896774_5_0" type="internal" x="1728.22" y="501.40" incLanes=":1664896774_2_0 jljendsudirman_utara_2_0 jljendsudirman_utara_2_1" intLanes=":1664896774_3_0 :1664896774_3_1"/>
+    <junction id=":1903473360_5_0" type="internal" x="1958.37" y="499.94" incLanes=":1903473360_4_0 jljendsudirman_selatan_5_0 jljendsudirman_selatan_5_1" intLanes=":1903473360_0_0 :1903473360_0_1"/>
+    <junction id=":cluster_1903473311_3885907862_6_0" type="internal" x="2161.47" y="498.23" incLanes=":cluster_1903473311_3885907862_5_0 jljendsudirman_selatan_3_0 jljendsudirman_selatan_3_1 jljendsudirman_selatan_3_2" intLanes=":cluster_1903473311_3885907862_0_0 :cluster_1903473311_3885907862_0_1 :cluster_1903473311_3885907862_0_2"/>
+
+    <connection from="jlcikditiro_barat_1" to="jlcikditiro_barat_2" fromLane="0" toLane="0" via=":1903473363_1_0" dir="s" state="M"/>
+    <connection from="jlcikditiro_barat_1" to="jlcikditiro_barat_2" fromLane="1" toLane="1" via=":1903473363_1_1" dir="s" state="M"/>
+    <connection from="jlcikditiro_timur_1" to="jlsuroto_timur_1" fromLane="0" toLane="0" via=":simpang_gramedia_5_0" tl="tls_gramedia" linkIndex="5" dir="s" state="o"/>
+    <connection from="jlcikditiro_timur_1" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" via=":simpang_gramedia_6_0" tl="tls_gramedia" linkIndex="6" dir="r" state="o"/>
+    <connection from="jlcikditiro_timur_1" to="jlsuroto_timur_1" fromLane="1" toLane="1" via=":simpang_gramedia_7_0" tl="tls_gramedia" linkIndex="7" dir="s" state="o"/>
+    <connection from="jlcikditiro_timur_1" to="jljendsudirman_selatan_1" fromLane="1" toLane="1" via=":simpang_gramedia_8_0" tl="tls_gramedia" linkIndex="8" dir="r" state="o"/>
+    <connection from="jljendsudirman_satuarah_1" to="jljendsudirman_satuarah_belokan" fromLane="0" toLane="0" via=":1903473308_0_0" dir="L" state="M"/>
+    <connection from="jljendsudirman_satuarah_1" to="jljendsudirman_satuarah_2" fromLane="0" toLane="0" via=":1903473308_1_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_satuarah_1" to="jljendsudirman_satuarah_2" fromLane="1" toLane="1" via=":1903473308_1_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_satuarah_1" to="jljendsudirman_satuarah_2" fromLane="2" toLane="2" via=":1903473308_1_2" dir="s" state="M"/>
+    <connection from="jljendsudirman_satuarah_2" to="jlsuroto_timur_1" fromLane="0" toLane="0" via=":simpang_gramedia_0_0" tl="tls_gramedia" linkIndex="0" dir="l" state="O"/>
+    <connection from="jljendsudirman_satuarah_2" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" via=":simpang_gramedia_1_0" tl="tls_gramedia" linkIndex="1" dir="s" state="O"/>
+    <connection from="jljendsudirman_satuarah_2" to="jljendsudirman_selatan_1" fromLane="1" toLane="1" via=":simpang_gramedia_1_1" tl="tls_gramedia" linkIndex="2" dir="s" state="O"/>
+    <connection from="jljendsudirman_satuarah_2" to="jlcikditiro_barat_1" fromLane="1" toLane="0" via=":simpang_gramedia_3_0" tl="tls_gramedia" linkIndex="3" dir="r" state="o"/>
+    <connection from="jljendsudirman_satuarah_2" to="jlcikditiro_barat_1" fromLane="2" toLane="1" via=":simpang_gramedia_3_1" tl="tls_gramedia" linkIndex="4" dir="r" state="o"/>
+    <connection from="jljendsudirman_satuarah_belokan" to="jlsuroto_timur_2" fromLane="0" toLane="0" via=":1903473341_2_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_1" to="jljendsudirman_selatan_2" fromLane="0" toLane="0" via=":1903473346_1_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_1" to="jljendsudirman_selatan_2" fromLane="1" toLane="1" via=":1903473346_1_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_2" to="jljendsudirman_selatan_3" fromLane="0" toLane="0" via=":3885907857_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_2" to="jljendsudirman_selatan_3" fromLane="1" toLane="1" via=":3885907857_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_2" to="jljendsudirman_selatan_3" fromLane="1" toLane="2" via=":3885907857_0_2" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_3" to="jljendsudirman_selatan_4" fromLane="0" toLane="0" via=":cluster_1903473311_3885907862_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_3" to="jljendsudirman_selatan_4" fromLane="1" toLane="1" via=":cluster_1903473311_3885907862_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_3" to="jljendsudirman_selatan_4" fromLane="2" toLane="2" via=":cluster_1903473311_3885907862_0_2" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_4" to="jljendsudirman_selatan_5" fromLane="1" toLane="0" via=":1903473313_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_4" to="jljendsudirman_selatan_5" fromLane="2" toLane="1" via=":1903473313_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_5" to="jljendsudirman_selatan_6" fromLane="0" toLane="0" via=":1903473360_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_5" to="jljendsudirman_selatan_6" fromLane="1" toLane="1" via=":1903473360_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_6" to="jljendsudirman_selatan_7" fromLane="0" toLane="0" via=":1664896774_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_6" to="jljendsudirman_selatan_7" fromLane="1" toLane="1" via=":1664896774_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_selatan_6" to="jljendsudirman_utara_3" fromLane="1" toLane="1" via=":1664896774_2_0" dir="T" state="m"/>
+    <connection from="jljendsudirman_selatan_belokan" to="jljendsudirman_selatan_2" fromLane="0" toLane="0" via=":1903473346_0_0" dir="s" state="m"/>
+    <connection from="jljendsudirman_utara_2" to="jljendsudirman_utara_3" fromLane="0" toLane="0" via=":1664896774_3_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_2" to="jljendsudirman_utara_3" fromLane="1" toLane="1" via=":1664896774_3_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_3" to="jljendsudirman_utara_4" fromLane="0" toLane="0" via=":1903473360_2_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_3" to="jljendsudirman_utara_4" fromLane="1" toLane="1" via=":1903473360_2_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_3" to="jljendsudirman_selatan_6" fromLane="1" toLane="1" via=":1903473360_4_0" dir="T" state="m"/>
+    <connection from="jljendsudirman_utara_4" to="jljendsudirman_utara_5" fromLane="0" toLane="0" via=":1262692922_0_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_4" to="jljendsudirman_utara_5" fromLane="1" toLane="1" via=":1262692922_0_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_4" to="jljendsudirman_utara_5" fromLane="1" toLane="2" via=":1262692922_0_2" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_5" to="jljendsudirman_utara_6" fromLane="0" toLane="0" via=":cluster_1903473311_3885907862_3_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_5" to="jljendsudirman_utara_6" fromLane="1" toLane="1" via=":cluster_1903473311_3885907862_3_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_5" to="jljendsudirman_selatan_4" fromLane="2" toLane="2" via=":cluster_1903473311_3885907862_5_0" dir="T" state="m"/>
+    <connection from="jljendsudirman_utara_6" to="jljendsudirman_utara_7" fromLane="0" toLane="0" via=":3885907857_3_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_6" to="jljendsudirman_utara_7" fromLane="1" toLane="1" via=":3885907857_3_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_7" to="jljendsudirman_utara_belokan" fromLane="0" toLane="0" via=":1903473346_3_0" dir="L" state="M"/>
+    <connection from="jljendsudirman_utara_7" to="jljendsudirman_utara_8" fromLane="0" toLane="0" via=":1903473346_4_0" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_7" to="jljendsudirman_utara_8" fromLane="1" toLane="1" via=":1903473346_4_1" dir="s" state="M"/>
+    <connection from="jljendsudirman_utara_8" to="jlcikditiro_barat_1" fromLane="0" toLane="0" via=":simpang_gramedia_9_0" tl="tls_gramedia" linkIndex="9" dir="l" state="O"/>
+    <connection from="jljendsudirman_utara_8" to="jlsuroto_timur_1" fromLane="0" toLane="0" via=":simpang_gramedia_10_0" tl="tls_gramedia" linkIndex="10" dir="r" state="o"/>
+    <connection from="jljendsudirman_utara_8" to="jlsuroto_timur_1" fromLane="1" toLane="1" via=":simpang_gramedia_10_1" tl="tls_gramedia" linkIndex="11" dir="r" state="o"/>
+    <connection from="jljendsudirman_utara_belokan" to="jlcikditiro_barat_2" fromLane="0" toLane="0" via=":1903473363_0_0" dir="s" state="m"/>
+    <connection from="jlsuroto_barat_1" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" via=":simpang_gramedia_12_0" tl="tls_gramedia" linkIndex="12" dir="l" state="o"/>
+    <connection from="jlsuroto_barat_1" to="jlcikditiro_barat_1" fromLane="0" toLane="0" via=":simpang_gramedia_13_0" tl="tls_gramedia" linkIndex="13" dir="s" state="o"/>
+    <connection from="jlsuroto_barat_1" to="jljendsudirman_selatan_1" fromLane="1" toLane="1" via=":simpang_gramedia_14_0" tl="tls_gramedia" linkIndex="14" dir="l" state="o"/>
+    <connection from="jlsuroto_barat_1" to="jlcikditiro_barat_1" fromLane="1" toLane="1" via=":simpang_gramedia_15_0" tl="tls_gramedia" linkIndex="15" dir="s" state="o"/>
+    <connection from="jlsuroto_barat_2" to="jljendsudirman_selatan_belokan" fromLane="0" toLane="0" via=":1903473340_0_0" dir="s" state="M"/>
+    <connection from="jlsuroto_barat_2" to="jlsuroto_barat_1" fromLane="1" toLane="0" via=":1903473340_1_0" dir="s" state="M"/>
+    <connection from="jlsuroto_barat_2" to="jlsuroto_barat_1" fromLane="2" toLane="1" via=":1903473340_1_1" dir="s" state="M"/>
+    <connection from="jlsuroto_barat_3" to="jlsuroto_barat_2" fromLane="0" toLane="0" via=":908329006-AddedOffRampNode_0_0" dir="s" state="M"/>
+    <connection from="jlsuroto_barat_3" to="jlsuroto_barat_2" fromLane="0" toLane="1" via=":908329006-AddedOffRampNode_0_1" dir="s" state="M"/>
+    <connection from="jlsuroto_barat_3" to="jlsuroto_barat_2" fromLane="1" toLane="2" via=":908329006-AddedOffRampNode_0_2" dir="s" state="M"/>
+    <connection from="jlsuroto_timur_1" to="jlsuroto_timur_2" fromLane="0" toLane="1" via=":1903473341_0_0" dir="s" state="M"/>
+    <connection from="jlsuroto_timur_1" to="jlsuroto_timur_2" fromLane="1" toLane="2" via=":1903473341_0_1" dir="s" state="M"/>
+    <connection from="jlsuroto_timur_2" to="jlsuroto_timur_3" fromLane="1" toLane="0" via=":1001305074#1-AddedOnRampNode_0_0" dir="s" state="M"/>
+    <connection from="jlsuroto_timur_2" to="jlsuroto_timur_3" fromLane="2" toLane="1" via=":1001305074#1-AddedOnRampNode_0_1" dir="s" state="M"/>
+
+    <connection from=":1001305074#1-AddedOnRampNode_0" to="jlsuroto_timur_3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1001305074#1-AddedOnRampNode_0" to="jlsuroto_timur_3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1262692922_0" to="jljendsudirman_utara_5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1262692922_0" to="jljendsudirman_utara_5" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1262692922_0" to="jljendsudirman_utara_5" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":1664896774_0" to="jljendsudirman_selatan_7" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1664896774_0" to="jljendsudirman_selatan_7" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1664896774_2" to="jljendsudirman_utara_3" fromLane="0" toLane="1" via=":1664896774_5_0" dir="T" state="m"/>
+    <connection from=":1664896774_5" to="jljendsudirman_utara_3" fromLane="0" toLane="1" dir="T" state="M"/>
+    <connection from=":1664896774_3" to="jljendsudirman_utara_3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1664896774_3" to="jljendsudirman_utara_3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473308_0" to="jljendsudirman_satuarah_belokan" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":1903473308_1" to="jljendsudirman_satuarah_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473308_1" to="jljendsudirman_satuarah_2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473308_1" to="jljendsudirman_satuarah_2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":1903473313_0" to="jljendsudirman_selatan_5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473313_0" to="jljendsudirman_selatan_5" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473340_0" to="jljendsudirman_selatan_belokan" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473340_1" to="jlsuroto_barat_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473340_1" to="jlsuroto_barat_1" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473341_0" to="jlsuroto_timur_2" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473341_0" to="jlsuroto_timur_2" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":1903473341_2" to="jlsuroto_timur_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473346_0" to="jljendsudirman_selatan_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473346_1" to="jljendsudirman_selatan_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473346_1" to="jljendsudirman_selatan_2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473346_3" to="jljendsudirman_utara_belokan" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":1903473346_4" to="jljendsudirman_utara_8" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473346_4" to="jljendsudirman_utara_8" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473360_0" to="jljendsudirman_selatan_6" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473360_0" to="jljendsudirman_selatan_6" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473360_2" to="jljendsudirman_utara_4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473360_2" to="jljendsudirman_utara_4" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":1903473360_4" to="jljendsudirman_selatan_6" fromLane="0" toLane="1" via=":1903473360_5_0" dir="T" state="m"/>
+    <connection from=":1903473360_5" to="jljendsudirman_selatan_6" fromLane="0" toLane="1" dir="T" state="M"/>
+    <connection from=":1903473363_0" to="jlcikditiro_barat_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473363_1" to="jlcikditiro_barat_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":1903473363_1" to="jlcikditiro_barat_2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":3885907857_0" to="jljendsudirman_selatan_3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":3885907857_0" to="jljendsudirman_selatan_3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":3885907857_0" to="jljendsudirman_selatan_3" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":3885907857_3" to="jljendsudirman_utara_7" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":3885907857_3" to="jljendsudirman_utara_7" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":908329006-AddedOffRampNode_0" to="jlsuroto_barat_2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":908329006-AddedOffRampNode_0" to="jlsuroto_barat_2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":908329006-AddedOffRampNode_0" to="jlsuroto_barat_2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_0" to="jljendsudirman_selatan_4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_0" to="jljendsudirman_selatan_4" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_0" to="jljendsudirman_selatan_4" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_3" to="jljendsudirman_utara_6" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_3" to="jljendsudirman_utara_6" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":cluster_1903473311_3885907862_5" to="jljendsudirman_selatan_4" fromLane="0" toLane="2" via=":cluster_1903473311_3885907862_6_0" dir="T" state="m"/>
+    <connection from=":cluster_1903473311_3885907862_6" to="jljendsudirman_selatan_4" fromLane="0" toLane="2" dir="T" state="M"/>
+    <connection from=":simpang_gramedia_0" to="jlsuroto_timur_1" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":simpang_gramedia_1" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":simpang_gramedia_1" to="jljendsudirman_selatan_1" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":simpang_gramedia_3" to="jlcikditiro_barat_1" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_3" to="jlcikditiro_barat_1" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_5" to="jlsuroto_timur_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":simpang_gramedia_6" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_7" to="jlsuroto_timur_1" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":simpang_gramedia_8" to="jljendsudirman_selatan_1" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_9" to="jlcikditiro_barat_1" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":simpang_gramedia_10" to="jlsuroto_timur_1" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_10" to="jlsuroto_timur_1" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":simpang_gramedia_12" to="jljendsudirman_selatan_1" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":simpang_gramedia_13" to="jlcikditiro_barat_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":simpang_gramedia_14" to="jljendsudirman_selatan_1" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":simpang_gramedia_15" to="jlcikditiro_barat_1" fromLane="0" toLane="1" dir="s" state="M"/>
+
+</net>
