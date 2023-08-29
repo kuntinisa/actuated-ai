@@ -91,7 +91,7 @@ class DQNAgent:
 
     def act(self, state, episode):
 
-        if e < 1:
+        if e < 10:
             self.epsilon = 1
         else:
             self.epsilon = 0.1
@@ -396,7 +396,7 @@ if __name__ == '__main__':
 
     # Main logic
     # parameters
-    episodes = 2000
+    episodes = 100
     batch_size = 100
     dtt_array=[]
     
@@ -522,18 +522,20 @@ if __name__ == '__main__':
 
         # membuat random ev
         range_period = [900, 600, 450]
-        period = random.choice([300])
-     
+        period = random.choice([900])
+        # print("python3 ../randomTrips.py -n four-leg-intersection.net.xml -r evfour-leg-new-intersection.rou.xml -b 0 -e 1800 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
+        # os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r evfour-leg-thesis-intersection.rou.xml -b 0 -e 3600 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
+        # membuat random traffic
         def rand_float_range(start, end):
             return random.random() * (end - start) + start
         # round(number, decimal_point)
         # period_nonev = round(rand_float_range(1.8, 9), 1)
         period_nonev = random.randint(2, 9)
-        period_nonev = 2
+        period_nonev = 4
         # print("python3 ../randomTrips.py -n lefthand.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 1800 --period "+ str(period_nonev) +" --fringe-factor 10 --random")
-        # os.system("python3 ../randomTrips.py -n lefthand.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 3600 --period "+ str(period_nonev) +" --fringe-factor 10 --random")
+        # os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 3600 --period 2 --fringe-factor 10 --random")
         # exit()
-        traci.start([sumoBinary, "-c", "osm_0.sumocfg", '--start', '--quit-on-end'])
+        traci.start([sumoBinary, "-c", "osm_thesis.sumocfg", '--start', '--quit-on-end'])
         
 
         while traci.simulation.getMinExpectedNumber() > 0:
@@ -781,15 +783,24 @@ if __name__ == '__main__':
                             traci.trafficlight.setPhaseDuration("tls", 1)
                             print("phase sedang berlangsung di tls", phase[action][0])
                             # cek reward 
-                            now_awt = sumoInt.getReward()
-                            reward = sum(np.subtract(awt,now_awt))
-                            awt=now_awt
+                            # now_awt = sumoInt.getReward()
+
+                            # reward = sum(np.subtract(awt,now_awt))
+                            # reward = awt[action]-now_awt[action]
+                            # awt=now_awt
                             # negative waiting time
                             # reward=-sum(now_awt)
-                            print("reward step ini: ", reward)
-                            cum_reward = cum_reward+reward
+                            # print("reward step ini: ", reward)
+                            # cum_reward = cum_reward+reward
                         if (step == int(exitstrategy_start_at_timestep+3+bestgreen[action])):
                             new_state= sumoInt.getState()
+                            now_awt = sumoInt.getReward()
+                            reward = sum(np.subtract(awt,now_awt))
+                            if sum(awt)!=0:
+                                reward = (awt[action]-now_awt[action])/sum(awt)*100
+                            else:
+                                reward = 0
+                            cum_reward = reward
                             agent.remember(state, action, cum_reward, new_state, False)
                             acc_cum_reward += cum_reward
                             print("\nStore reward ", cum_reward, "into memory")
@@ -806,16 +817,23 @@ if __name__ == '__main__':
                             traci.trafficlight.setPhaseDuration("tls", 1)
                             print("phase sedang berlangsung di tls", phase[action][0])
                             # cek reward 
-                            now_awt = sumoInt.getReward()
-                            reward = sum(np.subtract(awt,now_awt))
-                            
-                            awt=now_awt
+                            # now_awt = sumoInt.getReward()
+                            # reward = sum(np.subtract(awt,now_awt))
+                            # reward = awt[action]-now_awt[action]
+                            # awt=now_awt
                             # reward=-sum(now_awt)
-                            print("reward step ini: ", reward)
-                            cum_reward = cum_reward+reward
+                            # print("reward step ini: ", reward)
+                            # cum_reward = cum_reward+reward
 
                         if (step == int(exitstrategy_start_at_timestep+bestgreen[action])):
                             new_state= sumoInt.getState()
+                            now_awt = sumoInt.getReward()
+                            reward = sum(np.subtract(awt,now_awt))
+                            if sum(awt)!=0:
+                                reward = (awt[action]-now_awt[action])/sum(awt)*100
+                            else:
+                                reward = 0
+                            cum_reward = reward
                             agent.remember(state, action, cum_reward, new_state, False)
                             acc_cum_reward += cum_reward
                             print("\nStore reward ", cum_reward, "into memory")
