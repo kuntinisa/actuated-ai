@@ -1,3 +1,7 @@
+# lite karna statenya hanya satu
+# lebih ringan tapi hasil lebih jelek
+# action sepanjang waktu
+
 from __future__ import absolute_import
 from __future__ import print_function
 from sumolib import checkBinary
@@ -11,6 +15,7 @@ import numpy as np
 import math as math
 import subprocess
 import itertools
+import pandas as pd
 
 
 import subprocess
@@ -53,31 +58,23 @@ class DQNAgent:
         self.epsilon_decay = 0.0005  # exponential decay rate for exploration prob
         self.epsilon_greedy = False # use epsilon greedy strategy
         self.learning_rate = 0.1 # learning rate dari q learning, kalo 0 berarti q value tidak pernah diupdate
-        self.memory = deque(maxlen=50000)
+        self.memory = deque(maxlen=200)
         self.model = self._build_model()
         self.action_size = 4
 
     def _build_model(self):
-
-        
-
-        input_3 = Input(shape=(4, 1))
-        
-        x3 = Flatten()(input_3)
-
-        
 
         input_5 = Input(shape=(4, 1))
        
         x5 = Flatten()(input_5)
 
 
-        x = keras.layers.concatenate([x3, x5])
+        x = keras.layers.concatenate([x5])
         x = Dense(128, activation='relu')(x)
         x = Dense(64, activation='relu')(x)
         x = Dense(4, activation='linear')(x)
 
-        model = Model(inputs=[input_3,  input_5], outputs=[x])
+        model = Model(inputs=[  input_5], outputs=[x])
         model.compile(optimizer=keras.optimizers.RMSprop(
             lr=self.learning_rate), loss='mse')
 
@@ -91,7 +88,7 @@ class DQNAgent:
 
     def act(self, state, episode):
 
-        if e < 10:
+        if e < 1:
             self.epsilon = 1
         else:
             self.epsilon = 0.1
@@ -144,6 +141,9 @@ class DQNAgent:
             # klo done akhir episode, rewardnya ditambah sedikit prediction
             if not done:
                 # ini algoritma learningnya pake q-learning
+                print("=================")
+                print(state, action, reward, next_state)
+                exit()
                 target = (reward + self.gamma *
                           np.amax(self.model.predict(next_state)[0]))
             target_f = self.model.predict(state)
@@ -360,7 +360,7 @@ class SumoIntersection:
         lgts = np.array(light)
         lgts = lgts.reshape(1, 4, 1)
 
-        return [density, preempted_phase_state]
+        return [preempted_phase_state]
     
     def getReward(self):
        
@@ -398,7 +398,7 @@ if __name__ == '__main__':
     # Main logic
     # parameters
     episodes = 100
-    batch_size = 100
+    batch_size = 32
     dtt_array=[]
     
 
@@ -519,7 +519,7 @@ if __name__ == '__main__':
 
         awt_bpreemption=[]
         awt_apreemption=[]
-        severe=[]
+        severe=[0,0,0,0]
 
 
         in_detector=["-E1_0", "-E1_1", "-E2_0", "-E2_1", "-E3_0", "-E3_1", "-E4_0", "-E4_1"]
@@ -693,7 +693,17 @@ if __name__ == '__main__':
                             phase_status==''
                             awt_apreemption = sumoInt.getReward()
                             severe = np.subtract(awt_bpreemption,awt_apreemption)
-                            
+                            severe = pd.factorize(severe, sort=True)[0] + 1
+                            match preemption_in:
+                                case "-E1_0"|"-E1_1":
+                                    severe[0] = 0
+                                case "-E2_0"|"-E2_1":
+                                    severe[1] = 0
+                                case "-E3_0"|"-E3_1":
+                                    severe[2] = 0
+                                case "-E4_0"|"-E4_1":
+                                    severe[3] = 0
+                                
                             # yellow tls selama 6 detik sebelum ke ES
                             match preemption_in:
                                 case "-E1_0"|"-E1_1":
@@ -805,6 +815,14 @@ if __name__ == '__main__':
                             new_state= sumoInt.getState()
                             now_awt = sumoInt.getReward()
                             reward = sum(np.subtract(awt,now_awt))
+                            constant=1
+                            if severe[action]!=0:
+                                if severe[action]==1:
+                                    constant=4
+                                if severe[action]==2:
+                                    constant=3
+                                if severe[action]==3:
+                                    constant=2
                             if sum(awt)!=0:
                                 reward = (awt[action]-now_awt[action])/sum(awt)*100
                             else:
@@ -840,8 +858,15 @@ if __name__ == '__main__':
                             new_state= sumoInt.getState()
                             now_awt = sumoInt.getReward()
                             reward = sum(np.subtract(awt,now_awt))
+                            if severe[action]!=0:
+                                if severe[action]==1:
+                                    constant=2.5
+                                if severe[action]==2:
+                                    constant=2
+                                if severe[action]==3:
+                                    constant=1.5
                             if sum(awt)!=0:
-                                reward = (awt[action]-now_awt[action])/sum(awt)*100
+                                reward = (awt[action]-now_awt[action])*constant/sum(awt)*100
                             else:
                                 reward = 0
                             cum_reward = reward

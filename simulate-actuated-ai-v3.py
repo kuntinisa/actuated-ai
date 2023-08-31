@@ -1,3 +1,11 @@
+# statenya 2 yaitu preemption phase dan density diwakilkan dengan angka urut 1-4
+# action digenerate hanya 4 kali tiap selesai preemption
+# per episode 3600 detik
+# 2-8 preemption
+
+
+
+
 from __future__ import absolute_import
 from __future__ import print_function
 from sumolib import checkBinary
@@ -11,6 +19,7 @@ import numpy as np
 import math as math
 import subprocess
 import itertools
+import pandas as pd
 
 
 import subprocess
@@ -20,6 +29,7 @@ import h5py
 from collections import deque
 from keras.layers import Input, Conv2D, Flatten, Dense
 from keras.models import Model
+
 
 #import libraries
 import numpy as np
@@ -53,7 +63,7 @@ class DQNAgent:
         self.epsilon_decay = 0.0005  # exponential decay rate for exploration prob
         self.epsilon_greedy = False # use epsilon greedy strategy
         self.learning_rate = 0.1 # learning rate dari q learning, kalo 0 berarti q value tidak pernah diupdate
-        self.memory = deque(maxlen=50000)
+        self.memory = deque(maxlen=200)
         self.model = self._build_model()
         self.action_size = 4
 
@@ -86,7 +96,7 @@ class DQNAgent:
     def remember(self, state, action, reward, next_state, done):
         print(state)
         log_reinforcement = open('log_reinforcementlearning.txt', 'a')
-        log_reinforcement.write(str(action) + ' ' + str(reward) + '\n')
+        log_reinforcement.write(str(preemption_count) + ' ' + ' [' + str(state[0][0][0][0]) + ' ' + str(state[0][0][1][0]) + ' ' + str(state[0][0][2][0])+ ' ' + str(state[0][0][3][0]) + '] [' + str(state[1][0][0][0]) + ' ' + str(state[1][0][1][0]) + ' ' + str(state[1][0][2][0])+ ' ' + str(state[1][0][3][0]) + '] ' + str(action) + ' ' + str(reward) + '\n')
         self.memory.append((state, action, reward, next_state, done))
 
     def act(self, state, episode):
@@ -144,6 +154,8 @@ class DQNAgent:
             # klo done akhir episode, rewardnya ditambah sedikit prediction
             if not done:
                 # ini algoritma learningnya pake q-learning
+                print("=================")
+                print(state, action, reward, next_state)
                 target = (reward + self.gamma *
                           np.amax(self.model.predict(next_state)[0]))
             target_f = self.model.predict(state)
@@ -343,7 +355,9 @@ class SumoIntersection:
         
         
         densityMatrix = [vehicles_road1, vehicles_road2, vehicles_road3, vehicles_road4]
-        
+        severe = pd.factorize(densityMatrix, sort=True)[0] + 1
+        densityMatrix = [severe[0], severe[1], severe[2], severe[3]]
+
         position = np.array(positionMatrix)
         position = position.reshape(1, 12, 12, 1)
 
@@ -352,13 +366,11 @@ class SumoIntersection:
 
         density = np.array(densityMatrix)
         density = density.reshape(1,4,1)
-
-        print(preempted_phase)
-        print(density)
-
+       
 
         lgts = np.array(light)
         lgts = lgts.reshape(1, 4, 1)
+
 
         return [density, preempted_phase_state]
     
@@ -398,7 +410,7 @@ if __name__ == '__main__':
     # Main logic
     # parameters
     episodes = 100
-    batch_size = 100
+    batch_size = 32
     dtt_array=[]
     
 
@@ -437,6 +449,7 @@ if __name__ == '__main__':
         # preemption variable
         # status preemption saat ini ('', on, done)
         preemption_status=''
+        post_preemption_status=''
         # traffic light phase yang sedang berjalan saat ini (0,1,2,3,4,5,6,7)
         current_trafficlight=''
         # preemption sedang berlangsung selama berapa detik
@@ -451,6 +464,7 @@ if __name__ == '__main__':
         # exit strategy variable
         # ini hanya untuk satu intersection
         phase_status=''
+        exit_phase_counter=0
         exitstrategy_start_at_timestep=''
 
 
@@ -527,7 +541,7 @@ if __name__ == '__main__':
 
         # membuat random ev
         range_period = [900, 600, 450]
-        period = random.choice([900])
+        period = random.choice([450])
         # print("python3 ../randomTrips.py -n four-leg-intersection.net.xml -r evfour-leg-new-intersection.rou.xml -b 0 -e 1800 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
         # os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r evfour-leg-thesis-intersection.rou.xml -b 0 -e 3600 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
         # membuat random traffic
@@ -717,6 +731,7 @@ if __name__ == '__main__':
                 preemption_count+=1
                 print("Preemption [", preemption_count, "] ", preemption_status, " in ", preemption_timer_stop_at, " s \n")
                 phase_status = ""
+                post_preemption_status="on"
                 prev_action = ''
                
                 cum_preemption = cum_preemption + preemption_timer_stop_at
@@ -744,30 +759,37 @@ if __name__ == '__main__':
             else: 
                 preemption_status=""
 
-            if preemption_status!="on" and phase_status=='':
-                state = sumoInt.getState()
-                action = agent.act(state, e)[0]
-                bestgreen = sumoInt.getBestGreen()
+            if post_preemption_status=="on" and phase_status=='':
+                if exit_phase_counter<4:
+                    exit_phase_counter = exit_phase_counter+1
+                    state = sumoInt.getState()
+                    action = agent.act(state, e)[0]
+                    bestgreen = sumoInt.getBestGreen()
 
-                print("best green saat action diambil : ", bestgreen)
-                print("action dipilih ", action)
-                phase_status="on"
-                awt = sumoInt.getReward()
-                exitstrategy_start_at_timestep = step
-                print("phase status ", phase_status)
+                    print("best green saat action diambil : ", bestgreen)
+                    print("action dipilih ", action)
+                    phase_status="on"
+                    awt = sumoInt.getReward()
+                    exitstrategy_start_at_timestep = step
+                    print("phase status ", phase_status)
 
-                match action:
-                    case 0|1|2|3:
-                        # 2. fixed phase exit strategy 
-                        print("Vehicle density : ", vehiclenumbers)
-                        action_phase = ['',0,1,2,3,'',0,1,2,3,0,1,2,3]
-                        action_phase = [0,1,2,3]
-                        max_waitingline_phase = action_phase[chosen_exit_strategy]
-                        print("Programmed exit phase ", max_waitingline_phase, "for : ", all_duration," s")
-                        print("Run interrupted signal phase ", current_trafficlight, "for about ", current_trafficlightelapsed, "s")
+                    match action:
+                        case 0|1|2|3:
+                            # 2. fixed phase exit strategy 
+                            print("Vehicle density : ", vehiclenumbers)
+                            action_phase = ['',0,1,2,3,'',0,1,2,3,0,1,2,3]
+                            action_phase = [0,1,2,3]
+                            max_waitingline_phase = action_phase[chosen_exit_strategy]
+                            print("Programmed exit phase ", max_waitingline_phase, "for : ", all_duration," s")
+                            print("Run interrupted signal phase ", current_trafficlight, "for about ", current_trafficlightelapsed, "s")
+                else:
+                    exit_phase_counter=0
+                    post_preemption_status=""
+                    
+                
 
                 
-            if preemption_status!="on" and phase_status=="on":
+            if post_preemption_status=="on" and phase_status=="on":
                 if bestgreen[action]==0:
                     # reward = 0
                     # cum_reward = cum_reward+reward
@@ -806,7 +828,7 @@ if __name__ == '__main__':
                             now_awt = sumoInt.getReward()
                             reward = sum(np.subtract(awt,now_awt))
                             if sum(awt)!=0:
-                                reward = (awt[action]-now_awt[action])/sum(awt)*100
+                                reward = int((awt[action]-now_awt[action])/sum(awt)*100)
                             else:
                                 reward = 0
                             cum_reward = reward
@@ -841,7 +863,7 @@ if __name__ == '__main__':
                             now_awt = sumoInt.getReward()
                             reward = sum(np.subtract(awt,now_awt))
                             if sum(awt)!=0:
-                                reward = (awt[action]-now_awt[action])/sum(awt)*100
+                                reward = int((awt[action]-now_awt[action])/sum(awt)*100)
                             else:
                                 reward = 0
                             cum_reward = reward

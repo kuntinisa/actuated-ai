@@ -137,6 +137,10 @@ class DQNAgent:
         for state, action, reward, next_state, done in minibatch:
             target = reward
             if not done:
+                print("=================")
+                print(state, action, reward, next_state)
+                exit()
+                # ini algoritma learningnya pake q-learning
                 target = (reward + self.gamma *
                           np.amax(self.model.predict(next_state)[0]))
             target_f = self.model.predict(state)
@@ -224,7 +228,7 @@ if __name__ == '__main__':
     # Main logic
     # parameters
     episodes = 2000
-    batch_size = 1024
+    batch_size = 32
     dtt_array=[]
     
 
