@@ -61,9 +61,9 @@ class DQNAgent:
         self.epsilon = 0.1  # exploration rate at first if improved on
         self.epsilon_min = 0.01  # minimum exploration probability
         self.epsilon_decay = 0.0005  # exponential decay rate for exploration prob
-        self.epsilon_greedy = False # use epsilon greedy strategy
+        self.epsilon_greedy = True # use epsilon greedy strategy
         self.learning_rate = 0.1 # learning rate dari q learning, kalo 0 berarti q value tidak pernah diupdate
-        self.memory = deque(maxlen=200)
+        self.memory = deque(maxlen=100)
         self.model = self._build_model()
         self.action_size = 4
 
@@ -90,23 +90,36 @@ class DQNAgent:
         model = Model(inputs=[input_3,  input_5], outputs=[x])
         model.compile(optimizer=keras.optimizers.RMSprop(
             lr=self.learning_rate), loss='mse')
+        
+        
+        
 
         return model
 
     def remember(self, state, action, reward, next_state, done):
         print(state)
         log_reinforcement = open('log_reinforcementlearning.txt', 'a')
-        log_reinforcement.write(str(preemption_count) + ' ' + ' [' + str(state[0][0][0][0]) + ' ' + str(state[0][0][1][0]) + ' ' + str(state[0][0][2][0])+ ' ' + str(state[0][0][3][0]) + '] [' + str(state[1][0][0][0]) + ' ' + str(state[1][0][1][0]) + ' ' + str(state[1][0][2][0])+ ' ' + str(state[1][0][3][0]) + '] ' + str(action) + ' ' + str(reward) + '\n')
+        exit_phase_counter
+        log_reinforcement.write(str(step) + ' ' + str(preemption_count) + ' ' + str(exit_phase_counter) + ' ' + str(preemption_count) + ' ' + ' [' + str(state[0][0][0][0]) + ' ' + str(state[0][0][1][0]) + ' ' + str(state[0][0][2][0])+ ' ' + str(state[0][0][3][0]) + '] [' + str(state[1][0][0][0]) + ' ' + str(state[1][0][1][0]) + ' ' + str(state[1][0][2][0])+ ' ' + str(state[1][0][3][0]) + '] ' + str(action) + ' ' + str(reward) + '\n')
         self.memory.append((state, action, reward, next_state, done))
+        # log_memory = open('log_memory.txt', 'a')
+        # log_memory.write(str(sys.getsizeof(self.memory))+" " + str(step) + " \n")
+
 
     def act(self, state, episode):
+        if self.epsilon_greedy:
+        # Here we'll use an improved version of our epsilon greedy strategy for Q-learning
+            explore_probability = self.epsilon_min + (self.epsilon - self.epsilon_min) * np.exp(-self.epsilon_decay * episode)
 
-        if e < 10:
-            self.epsilon = 1
+        # OLD EPSILON STRATEGY
         else:
-            self.epsilon = 0.1
+            if self.epsilon > self.epsilon_min:
+                self.epsilon *= (1-self.epsilon_decay)
+            explore_probability = self.epsilon
+
+        log_memory.write(str(explore_probability))
             
-        if np.random.rand() <= self.epsilon:
+        if np.random.rand() <= explore_probability:
             return random.randrange(self.action_size), "exploration"
         
         act_values = self.model.predict(state)
@@ -151,17 +164,19 @@ class DQNAgent:
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:
             target = reward
-            # klo done akhir episode, rewardnya ditambah sedikit prediction
             if not done:
                 # ini algoritma learningnya pake q-learning
                 print("=================")
                 print(state, action, reward, next_state)
                 target = (reward + self.gamma *
                           np.amax(self.model.predict(next_state)[0]))
+            # predict all action
             target_f = self.model.predict(state)
-            print(target_f)
+            # replace prediction of action with target
             target_f[0][action] = target
+            # fit into the model
             self.model.fit(state, target_f, epochs=1, verbose=0)
+            
 
     def load(self, name):
         self.model.load_weights(name)
@@ -355,8 +370,8 @@ class SumoIntersection:
         
         
         densityMatrix = [vehicles_road1, vehicles_road2, vehicles_road3, vehicles_road4]
-        severe = pd.factorize(densityMatrix, sort=True)[0] + 1
-        densityMatrix = [severe[0], severe[1], severe[2], severe[3]]
+        # severe = pd.factorize(densityMatrix, sort=True)[0] + 1
+        # densityMatrix = [severe[0], severe[1], severe[2], severe[3]]
 
         position = np.array(positionMatrix)
         position = position.reshape(1, 12, 12, 1)
@@ -410,7 +425,7 @@ if __name__ == '__main__':
     # Main logic
     # parameters
     episodes = 100
-    batch_size = 32
+    batch_size = 16
     dtt_array=[]
     
 
@@ -438,6 +453,7 @@ if __name__ == '__main__':
         log_waitedtime = open('log_waitedtime.txt', 'a')
         log_preemptiontimer = open('log_preemptiontimer.txt', 'a')
         log_episode = open('log_episode.txt', 'a')
+        log_memory = open('log_memory.txt', 'a')
 
         step = 0
         preemption_timer_stop_at = 0
@@ -460,6 +476,7 @@ if __name__ == '__main__':
         vehicle_on_preemption=[]
         # preemption berlangsung selama berapa detik / ketika preemption berhenti, di detik keberapa
         preemption_timer_stop_at=0
+        preemption_step=0
 
         # exit strategy variable
         # ini hanya untuk satu intersection
@@ -541,9 +558,9 @@ if __name__ == '__main__':
 
         # membuat random ev
         range_period = [900, 600, 450]
-        period = random.choice([450])
+        period = random.choice([1800])
         # print("python3 ../randomTrips.py -n four-leg-intersection.net.xml -r evfour-leg-new-intersection.rou.xml -b 0 -e 1800 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
-        # os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r evfour-leg-thesis-intersection.rou.xml -b 0 -e 3600 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10 --random --prefix ev")
+        os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r evfour-leg-thesis-intersection.rou.xml -b 0 -e 1800 --vehicle-class emergency --vclass emergency --period "+ str(period) +" --random-depart --fringe-factor 10  --random --prefix ev")
         # membuat random traffic
         def rand_float_range(start, end):
             return random.random() * (end - start) + start
@@ -551,8 +568,8 @@ if __name__ == '__main__':
         # period_nonev = round(rand_float_range(1.8, 9), 1)
         period_nonev = random.randint(2, 9)
         period_nonev = 4
-        # print("python3 ../randomTrips.py -n lefthand.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 1800 --period "+ str(period_nonev) +" --fringe-factor 10 --random")
-        # os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 3600 --period 2 --fringe-factor 10 --random")
+        # print("python3 ../randomTrips.py -n lefthand.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 1800 --period "+ str(period_nonev) +" --fringe-factor 10 ")
+        os.system("python3 ../randomTrips.py -n lefthand-thesis.net.xml -r four-leg-thesis-intersection.rou.xml -b 0 -e 1800 --period 2 --fringe-factor 10 --random")
         # exit()
         traci.start([sumoBinary, "-c", "osm_thesis.sumocfg", '--start', '--quit-on-end'])
         
@@ -612,6 +629,7 @@ if __name__ == '__main__':
                        
                         print("\n \n====================================================")
                         print("EV detected in by ", evdetector, " in step ", step)
+                        preemption_step = step
                         print("Current signal phase interupted ", current_trafficlight, " in road ",now_phase," remaining time ", current_trafficlightelapsed, " s, has elapsed in ", tls_done_duration, " s")
                         
                         
@@ -790,20 +808,22 @@ if __name__ == '__main__':
 
                 
             if post_preemption_status=="on" and phase_status=="on":
-                if bestgreen[action]==0:
-                    # reward = 0
-                    # cum_reward = cum_reward+reward
-                    # new_state= sumoInt.getState()
-                    # agent.remember(state, action, cum_reward, new_state, False)
-                    # acc_cum_reward += cum_reward
-                    # print("\nStore reward ", cum_reward, "into memory")
-                    # cum_reward=0
-                    # Randomly Draw 32 samples and train the neural network by RMS Prop algorithm
-                    # if(len(agent.memory) > batch_size):
-                        # agent.replay(batch_size)
-                    phase_status=""
-                    print("GANTI PHASE ===============================")
-                else:
+                # if bestgreen[action]==0:
+                #     # reward = 0
+                #     # cum_reward = cum_reward+reward
+                #     # new_state= sumoInt.getState()ß
+                #     # agent.remember(state, action, cum_reward, new_state, False)
+                #     # acc_cum_reward += cum_reward
+                #     # print("\nStore reward ", cum_reward, "into memory")
+                #     # cum_reward=0
+                #     # Randomly Draw 32 samples and train the neural network by RMS Prop algorithm
+                #     # if(len(agent.memory) > batch_size):
+                #         # agent.replay(batch_size)
+                #     phase_status=""
+                #     print("GANTI PHASE ===============================")
+                # else:
+                    if bestgreen[action]==0:
+                        bestgreen[action]=1
                     # transition berlaku jika action sebelumnya berbeda dengan action saat ini
                     if prev_action!='' and action!=prev_action: 
                         if (exitstrategy_start_at_timestep <= step <= int(exitstrategy_start_at_timestep+3)):
@@ -839,6 +859,7 @@ if __name__ == '__main__':
                             
                             cum_reward=0
                             # Randomly Draw 32 samples and train the neural network by RMS Prop algorithm
+                            log_memory.write(str(len(agent.memory))+" "+str("step")+" \n")
                             if(len(agent.memory) > batch_size):
                                 agent.replay(batch_size)
                             phase_status=""
@@ -872,30 +893,37 @@ if __name__ == '__main__':
                             print("\nStore reward ", cum_reward, "into memory")
                             cum_reward=0
                             # Randomly Draw 32 samples and train the neural network by RMS Prop algorithm
+                            log_memory.write(str(len(agent.memory))+" "+str(step)+" \n")
+                            # len memory ini sama aja dengan berapa kali action
                             if(len(agent.memory) > batch_size):
+                                
                                 agent.replay(batch_size)
                             phase_status=""
                             prev_action = action
                             print("GANTI PHASE ===============================")
                     
+                
+
             step += 1
 
            
             
         # normal vehicle count, ev count, cumulative preemption duration, average waiting time,
         
+
         if len(agent.memory) > 0:
             mem = agent.memory[-1]
             del agent.memory[-1]
             agent.memory.append((mem[0], mem[1], reward, mem[3], True))
+        
         nev_count = math.ceil(1800/period_nonev)
         nev_count = 1800
         avg_waitingtime = round(acc_waiting_time/(nev_count+ev_count), 2)
         avg_preemptionduration=0
         if (cum_preemption!=0):
             avg_preemptionduration = round(cum_preemption/(ev_count), 0) 
-        log_episode.write(str(chosen_exit_strategy)+" "+str(max_waitingline_phase)+" ")
-        log_episode.write(str(nev_count) + " " + str(preemption_count) + " " + str(avg_preemptionduration) + " " + str(all_es) + " " + str(count_es1)+ " " + str(count_es2)+ " " + str(count_es3)+ " " + str(count_es4) + " " + str(acc_cum_reward) + " " + str(cum_negativereward) + " " + str(avg_waitingtime) + " " + '\n')
+        # log_episode.write(str(chosen_exit_strategy)+" "+str(max_waitingline_phase)+" ")
+        log_episode.write(str(e) + " " + str(nev_count) + " " + str(preemption_count) + " " + str(preemption_step) + " " +  str(avg_preemptionduration) + " " + str(all_es) + " " + str(count_es1)+ " " + str(count_es2)+ " " + str(count_es3)+ " " + str(count_es4) + " " + str(acc_cum_reward) + " " + str(cum_negativereward) + " " + str(avg_waitingtime) + " " + '\n')
         acc_cum_reward=0
         all_es = []
         cum_negativereward=0
